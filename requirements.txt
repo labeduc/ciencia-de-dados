@@ -10,3 +10,4 @@ scipy
 seaborn
 urllib3
 wordcloud
+nbformat
