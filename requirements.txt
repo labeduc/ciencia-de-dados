@@ -11,3 +11,7 @@ seaborn
 urllib3
 wordcloud
 nbformat
+llama-index
+gpt-index
+openai
+pypdf
