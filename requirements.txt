@@ -15,3 +15,6 @@ llama-index
 gpt-index
 openai
 pypdf
+duckdb
+duckdb-engine
+jupysql
