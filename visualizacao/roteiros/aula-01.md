@@ -1,4 +1,3 @@
-
 # Introdução
 
 Olá, bem-vindo ao nosso vídeo sobre Visualização de Dados!
