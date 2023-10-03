@@ -1,6 +1,6 @@
 # Exercício 001: Visualização de Dados com o Dataset de Pokémons
 
-1. Importe a biblioteca Pandas e leia o arquivo CSV com os dados dos Pokémons. O dataset está disponível no seguinte link: [https://github.com/labeduc/datasets/raw/main/pokemons/all.csv]
+1. Importe a biblioteca Pandas e leia o arquivo CSV com os dados dos Pokémons. O dataset está disponível no seguinte link: ['https://media.githubusercontent.com/media/labeduc/datasets/main/pokemons/pokemons.csv']
 
 2. Visualize as primeiras 5 linhas do DataFrame para ter uma ideia dos dados que estamos lidando.
 

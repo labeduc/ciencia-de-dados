@@ -2,7 +2,7 @@
 
 1. Importe as bibliotecas Pandas, Plotly e json, que serão necessárias para a análise e visualização de dados.
 
-2. Leia o arquivo CSV 'cidades.csv' e carregue-o em um DataFrame.
+2. Leia o arquivo CSV 'cidades.csv' disponibilizado no link: [https://github.com/labeduc/datasets/blob/main/cidades/cidades.csv] e carregue-o em um DataFrame.
 
 3. Crie uma visualização interativa de mapa utilizando o Plotly. Utilize os dados de latitude ('lat'), longitude ('lon'), total de população ('populacao_total'), total de carros ('total_carros') e total de motos ('total_motocicletas').
 
