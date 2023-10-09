@@ -12,6 +12,7 @@ O seu desafio é decodificar esses campos categóricos e transformá-los em uma 
 
 1. **Análise Inicial:**
    - Carregue o dataset e realize uma análise exploratória inicial para identificar quais campos são categóricos e estão codificados.
+   - Repositório para pegar o dataset: [DS Salaries](https://github.com/labeduc/datasets/tree/main/ds-salaries)
 
 2. **Decodificação:**
    Para os campos categóricos codificados, utilize o seguinte mapeamento:
