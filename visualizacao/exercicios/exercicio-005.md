@@ -2,7 +2,7 @@
 
 1. Importe as bibliotecas Pandas, Matplotlib e Seaborn, que serão necessárias para a análise e visualização de dados.
 
-2. Leia o arquivo CSV '2022-2023 NBA Player Stats - Regular.csv' disponibilizado no link: [https://media.githubusercontent.com/media/labeduc/datasets/main/nba/2022-2023%20NBA%20Player%20Stats%20-%20Regular.csv] e carregue-o em um DataFrame.
+2. Leia o arquivo CSV '2022_2023_NBA_PlayerStats_Regular.csv' disponibilizado no link: [https://media.githubusercontent.com/media/labeduc/datasets/main/nba/2022_2023_NBA_PlayerStats_Regular.csv] e carregue-o em um DataFrame.
 
 3. Selecione apenas os jogadores que tenham uma média de pontos (PTS) superior a 10 por jogo.
 
