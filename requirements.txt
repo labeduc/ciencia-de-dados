@@ -1,20 +1,36 @@
-jupyter-client
-jupyter-core
-matplotlib
-matplotlib-inline
-numpy
+# Análise e manipulação de dados
 pandas
-plotly
-requests
-scipy
-seaborn
-urllib3
-wordcloud
-nbformat
-llama-index
-gpt-index
-openai
-pypdf
+numpy
 duckdb
-duckdb-engine
 jupysql
+
+# Visualização
+matplotlib
+seaborn
+plotly
+wordcloud
+
+# Exploração e profiling
+sweetviz
+dtale
+jupyter-summarytools
+
+# Machine Learning / IA
+openai
+pandasai
+
+# Web scraping e requisições
+requests
+requests-html
+beautifulsoup4
+
+# Imagens
+Pillow
+
+# Grafos
+networkx
+
+# Utilitários
+python-dotenv
+powerbiclient
+
