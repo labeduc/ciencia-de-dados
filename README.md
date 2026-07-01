@@ -24,7 +24,8 @@ Módulo de introdução à programação em Python. Os notebooks cobrem desde os
 
 ### 02_estatistica
 
-Módulo reservado para o conteúdo de estatística aplicada à ciência de dados. Em construção.
+Módulo propõe um curso prático de Estatística e Análise de Dados estruturado em quatro módulos progressivos, guiando os alunos desde os conceitos iniciais de amostragem, recolha e organização de dados em tabelas até técnicas avançadas de interpretação analítica através de folhas de cálculo. Ao longo das sessões, os estudantes aprendem a calcular e diferenciar medidas de tendência central e frequências (como média, moda e a robustez da mediana face a valores discrepantes), avançando na fase final para a análise de dispersão (desvio padrão e variância), identificação de correlações lineares ou espúrias entre variáveis e a aplicação de conceitos de interpolação e extrapolação para a realização de projeções financeiras e de consumo seguras.
+
 
 ### 03_visualizacao
 
