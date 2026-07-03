@@ -1,6 +1,6 @@
 # Conteúdo Programático Completo - Curso de Ciência de Dados
 
-Este documento consolida o conteúdo programático de todos os módulos do curso, excluindo o material antigo.
+Este documento consolida o conteúdo programático de todos os módulos do curso.
 
 ---
 
@@ -16,8 +16,6 @@ Curso introdutório de Python voltado para iniciantes que desejam ingressar em p
 ---
 
 ### Aula 01 — Introdução ao Python
-**Arquivo:** `Python_AULA01.ipynb`
-
 **Tópicos:**
 - O que é Python: linguagem interpretada, multiplataforma e open source
 - Plataformas de desenvolvimento: Thonny, Programiz, REPL, VSCode, PyCharm
@@ -37,8 +35,6 @@ Curso introdutório de Python voltado para iniciantes que desejam ingressar em p
 ---
 
 ### Aula 02 — Tipos Básicos, Operações e Expressões
-**Arquivo:** `Python_AULA02.ipynb`
-
 **Tópicos:**
 - Tipos básicos: `str`, `int`, `float`, `complex`, `bool`
 - Identificação de tipo com `type()`
@@ -55,8 +51,6 @@ Curso introdutório de Python voltado para iniciantes que desejam ingressar em p
 ---
 
 ### Aula 03 — Controle de Fluxo e Repetição
-**Arquivo:** `Python_AULA03.ipynb`
-
 **Tópicos:**
 - Desvio condicional `if`: sintaxe, condição booleana e bloco indentado
 - `if / else`: decisão binária
@@ -76,8 +70,6 @@ Curso introdutório de Python voltado para iniciantes que desejam ingressar em p
 ---
 
 ### Aula 04 — Listas, Tuplas, Conjuntos e Dicionários
-**Arquivo:** `Python_AULA04.ipynb`
-
 **Tópicos:**
 - **Listas (`list`):** declaração com `[]` e com `list()`, indexação a partir do zero, índices negativos
 - Operações com listas: `append()`, `remove()`, `del`, `pop()`
@@ -100,8 +92,6 @@ Curso introdutório de Python voltado para iniciantes que desejam ingressar em p
 ---
 
 ### Aula 05 — Funções
-**Arquivo:** `Python_AULA05.ipynb`
-
 **Tópicos:**
 - Motivação para funções: reuso, isolamento e abstração
 - Sintaxe de declaração com `def`
@@ -133,7 +123,7 @@ Curso de Estatística Básica e Análise de Dados, focado na recolha, organizaç
 
 ---
 
-### Módulo 1: Introdução, Recolha e Organização de Dados
+### Aula 1: Introdução, Recolha e Organização de Dados
 **Objetivos:** Compreender os conceitos fundamentais de estatística; aprender a recolher e estruturar massas de dados; identificar variáveis de referência.
 
 **Conteúdos Programáticos:**
@@ -148,7 +138,7 @@ Curso de Estatística Básica e Análise de Dados, focado na recolha, organizaç
 
 ---
 
-### Módulo 2: Medidas de Tendência Central e Frequências
+### Aula 2: Medidas de Tendência Central e Frequências
 **Objetivos:** Calcular e identificar informações essenciais em conjuntos de dados; preencher dados em falta; aplicar fórmulas de estatística descritiva em planilhas.
 
 **Conteúdos Programáticos:**
@@ -165,7 +155,7 @@ Curso de Estatística Básica e Análise de Dados, focado na recolha, organizaç
 
 ---
 
-### Módulo 3: Ordenação de Dados e a Mediana
+### Aula 3: Ordenação de Dados e a Mediana
 **Objetivos:** Compreender o impacto do ordenamento na análise de dados; calcular e interpretar a mediana como medida robusta de tendência central.
 
 **Conteúdos Programáticos:**
@@ -180,7 +170,7 @@ Curso de Estatística Básica e Análise de Dados, focado na recolha, organizaç
 
 ---
 
-### Módulo 4: Análise Avançada, Correlação e Projeções
+### Aula 4: Análise Avançada, Correlação e Projeções
 **Objetivos:** Analisar criticamente distribuições de dados; identificar relações matemáticas entre variáveis; projetar valores futuros ou intermediários com segurança.
 
 **Conteúdos Programáticos:**
@@ -205,7 +195,6 @@ Curso de Estatística Básica e Análise de Dados, focado na recolha, organizaç
 Curso completo de Visualização de Dados com Python voltado para iniciantes e profissionais. O conteúdo parte da teoria de visualização e evolui até a criação de gráficos profissionais e interativos.
 
 **Formato:** Jupyter Notebook (`.ipynb`), compatível com Google Colab, Jupyter e VS Code.  
-**Dataset principal:** `pokemons.csv` — 1.032 linhas × 44 colunas.  
 **Total de aulas:** 16 aulas teóricas + 4 práticas
 
 ---
@@ -265,8 +254,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Filtragem de dados com condições booleanas
 - Agregação com `groupby()` e funções de resumo
 
-**Biblioteca:** `pandas`
-
 ---
 
 ### Prática 05 — Pandas
@@ -289,8 +276,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Barras agrupadas com `hue`
 - Gráfico de barras empilhadas
 
-**Bibliotecas:** `seaborn`, `pandas`, `matplotlib`
-
 ---
 
 ### Prática 06 — Iniciando com Seaborn
@@ -311,8 +296,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Gráfico de área empilhado com `stackplot()` do Matplotlib
 - Combinação de Seaborn com Matplotlib para personalização
 
-**Bibliotecas:** `seaborn`, `matplotlib`
-
 ---
 
 ### Aula 08 — Dispersão e Quadrantes
@@ -325,8 +308,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Posicionamento de legenda externa ao gráfico
 - Construção de Gráfico de Quadrantes (Quadrante Mágico)
 - Anotações com linhas de referência (`axvline`, `axhline`)
-
-**Bibliotecas:** `seaborn`, `matplotlib`
 
 ---
 
@@ -348,8 +329,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Boas práticas: número de fatias, rótulos, destaque de fatias (`explode`)
 - Formatação de percentuais e legendas
 
-**Biblioteca:** `matplotlib`
-
 ---
 
 ### Aula 10 — Melhorando seus Visuais
@@ -363,8 +342,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Remoção do eixo Y e adição de valores diretamente nas barras
 - Paleta de cores personalizada para destaque de dados
 - Alinhamento de texto e hierarquia visual
-
-**Bibliotecas:** `seaborn`, `matplotlib`, `pandas`
 
 ---
 
@@ -390,8 +367,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Plotagem do grafo com `nx.draw()`
 - Personalização: tamanho de nodo por grau, cor por grupo, largura de aresta por peso
 
-**Biblioteca:** `networkx`, `matplotlib`
-
 ---
 
 ### Aula 12 — Sankey Charts
@@ -402,8 +377,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Construção do diagrama com `plotly.graph_objects`
 - Personalização de cores e rótulos dos nodos
 
-**Biblioteca:** `plotly`
-
 ---
 
 ### Aula 13 — Wordclouds
@@ -413,8 +386,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Criação com a biblioteca `wordcloud`
 - Customização: tamanho, cores e fontes
 - Uso de máscara de imagem para formatar o contorno da nuvem
-
-**Bibliotecas:** `wordcloud`, `PIL`, `matplotlib`
 
 ---
 
@@ -428,8 +399,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Fluxo completo: carregar → consultar → visualizar
 - Boas práticas: fechar a conexão após uso
 
-**Bibliotecas:** `duckdb`, `jupysql`
-
 ---
 
 ### Aula 15 — Gráficos Interativos
@@ -441,8 +410,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - `px.scatter()`: gráfico de dispersão interativo
 - `px.pie()`: gráfico de pizza interativo
 - Parâmetros comuns: `color`, `title`, `labels`, `hover_data`
-
-**Biblioteca:** `plotly.express`
 
 ---
 
@@ -456,8 +423,6 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 - Remoção de background para visual mais limpo
 - Adição de labels nos dados (`text`, `textposition`)
 - Configuração de tooltips personalizados (`hovertemplate`)
-
-**Biblioteca:** `plotly.graph_objects`
 
 ---
 
@@ -489,8 +454,6 @@ Curso introdutório de Banco de Dados Relacionais e SQL voltado para iniciantes 
 - Cláusula `HAVING`
 - Exercícios práticos com o dataset `VideoGame_Sales`
 
-**Bibliotecas:** `sqlite3`, `ipython-sql`
-
 ---
 
 ### Prática 01 — SQL Island
@@ -517,8 +480,6 @@ Curso introdutório de Banco de Dados Relacionais e SQL voltado para iniciantes 
 - Integridade referencial: chave primária, chave estrangeira e relacionamento entre tabelas
 - `SELECT` com `JOIN` entre tabelas relacionadas
 
-**Bibliotecas:** `sqlite3`, `ipython-sql`
-
 ---
 
 ### Prática 02 — Modelagem do Banco BDEmpregados
@@ -541,11 +502,9 @@ Curso introdutório de Banco de Dados Relacionais e SQL voltado para iniciantes 
 ### Sobre o Conteúdo
 Trilha de desenvolvimento que ensina a usar AI Assistants como ferramentas de aprendizado e criação de software, aplicando conceitos de UX, HTML, CSS, JavaScript e integração de dados em um projeto de dashboard funcional.
 
-**Total de módulos:** 7 módulos (1 assíncrono, 6 com aula ativa + assíncrono)
-
 ---
 
-### Módulo 1 — Primeiro Contato com AI (Assíncrono)
+### Aula 1 — Primeiro Contato com AI (Assíncrono)
 **Carga horária:** até 2h (leitura + exercícios)
 
 **Conteúdo:**
@@ -558,7 +517,7 @@ Trilha de desenvolvimento que ensina a usar AI Assistants como ferramentas de ap
 
 ---
 
-### Módulo 2 — Revisão com AI (Assíncrono)
+### Aula 2 — Revisão com AI (Assíncrono)
 **Carga horária:** até 2h (leitura + exercícios)
 
 **Conteúdo:**
@@ -669,15 +628,3 @@ Trilha de desenvolvimento que ensina a usar AI Assistants como ferramentas de ap
 | **Bancos de Dados** | SQLite, DuckDB, JupySQL |
 | **Frontend** | HTML5, CSS3, Chart.js |
 | **AI Assistants** | ChatGPT, Copilot, Gemini (uso pedagógico) |
-
----
-
-## Resumo por Módulo
-
-| Módulo | Conteúdo | Total de Aulas/Partes |
-|---|---|---|
-| **01_python** | Python para Ciência de Dados | 5 aulas |
-| **02_estatistica** | Estatística e Análise de Dados | 4 módulos |
-| **03_visualizacao** | Visualização de Dados com Python | 16 aulas + 4 práticas |
-| **04_banco_dados** | Banco de Dados com SQL | 2 aulas + 2 práticas |
-| **05_dev_com_ai** | Desenvolvimento com AI | 7 módulos (1 assíncrono, 6 ativos) |

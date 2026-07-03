@@ -1,4 +1,4 @@
-# Plano de Curso - 12 Semanas
+# Plano de Aula
 
 ## Distribuição das Aulas
 
@@ -19,7 +19,7 @@
 **Categoria:** Python (Aula 1/2)
 
 **Conteúdo:**
-- Aulas 01-02 do módulo `01_python/`
+- Aulas 01-02 do módulo
   - Introdução ao Python (variáveis, strings, input/output)
   - Tipos básicos, operações e expressões
   - Exercícios: cálculo de ano de nascimento, fórmula de Bhaskara
@@ -31,11 +31,6 @@
 
 **Pré-requisitos:** Noções de lógica de programação
 
-**Materiais:**
-- `01_python/Python_AULA01.ipynb`
-- `01_python/Python_AULA02.ipynb`
-- `01_python/CONTEUDO.md` (Módulo 1)
-
 ---
 
 ## Semana 2 — Python: Controle de Fluxo e Estruturas de Dados
@@ -43,7 +38,7 @@
 **Categoria:** Python (Aula 2/2)
 
 **Conteúdo:**
-- Aulas 03-04 do módulo `01_python/`
+- Aulas 03-04 do módulo
   - Controle de fluxo (if/elif/else, while, break, continue)
   - Estruturas de dados (listas, tuplas, conjuntos, dicionários)
   - Exercícios: ordenação, classificação, conjectura de Collatz, tradutor
@@ -55,11 +50,6 @@
 
 **Pré-requisitos:** Semana 1 (Python Fundamentos)
 
-**Materiais:**
-- `01_python/Python_AULA03.ipynb`
-- `01_python/Python_AULA04.ipynb`
-- `01_python/CONTEUDO.md` (Módulos 2-3)
-
 ---
 
 ## Semana 3 — Estatística: Medidas de Tendência Central e Análise
@@ -67,7 +57,7 @@
 **Categoria:** Estatística (Aula 1/1)
 
 **Conteúdo:**
-- Módulos 1-2 do `02_estatistica/`
+- Módulos 1-2 do 
   - Introdução, recolha e organização de dados
   - Medidas de tendência central (média, mediana, moda)
   - Frequências e análise de dados
@@ -78,10 +68,6 @@
 - Organizar dados em tabelas e calcular frequências
 
 **Pré-requisitos:** Semana 1 (Python básico auxilia, mas não obrigatório)
-
-**Materiais:**
-- `02_estatistica/Plano_de_aula.md`
-- Google Planilhas ou Excel para exercícios práticos
 
 **Atividade Prática:**
 - Análise de dados de voleibol (médias, extremos, modas)
@@ -94,7 +80,7 @@
 **Categoria:** Visualização (Aula 1/2)
 
 **Conteúdo:**
-- Aulas 01-05 do módulo `03_visualizacao/`
+- Aulas 01-05 do módulo
   - Teoria de visualização de dados
   - Google Colab e formatos de dados
   - Pandas: carregamento, inspeção, filtragem e agregação
@@ -105,11 +91,6 @@
 - Aprender a manipular dados com Pandas
 
 **Pré-requisitos:** Semanas 1-2 (Python) e Semana 3 (Estatística)
-
-**Materiais:**
-- `03_visualizacao/aula-01/` a `03_visualizacao/aula-05/`
-- `03_visualizacao/CONTEUDO.md` (Módulos 1-2)
-- Dataset: `pokemons.csv`
 
 **Atividade Prática:**
 - Carregar e explorar dataset de Pokémons
@@ -137,11 +118,6 @@
 
 **Pré-requisitos:** Semana 4 (Visualização Fundamentos e Pandas)
 
-**Materiais:**
-- `03_visualizacao/aula-06/` a `03_visualizacao/aula-10/`
-- `03_visualizacao/pratica-aula-06/` e `03_visualizacao/pratica-aula-08/`
-- `03_visualizacao/CONTEUDO.md` (Módulo 3)
-
 **Atividade Prática:**
 - Criar gráficos de barras por tipo de Pokémon
 - Construir gráfico de dispersão com quadrantes
@@ -167,12 +143,6 @@
 
 **Pré-requisitos:** Semana 3 (Estatística - conceitos de dados)
 
-**Materiais:**
-- `04_banco_dados/aulas/Aula01_Banco_Dados.ipynb`
-- `04_banco_dados/aulas/Aula01_SQL_Island.ipynb`
-- `04_banco_dados/CONTEUDO.md`
-- Bancos de dados: `clientes.db`, `videogame_sales.db`
-
 **Atividade Prática:**
 - SQL Island: exercícios gamificados com SELECT e WHERE
 - Consultar dataset de vendas de videogames
@@ -196,12 +166,6 @@
 - Modelar um banco de dados relacional completo
 
 **Pré-requisitos:** Semana 6 (Banco de Dados Consultas Básicas)
-
-**Materiais:**
-- `04_banco_dados/aulas/Aula02_Banco_Dados.ipynb`
-- `04_banco_dados/aulas/Aula02_Exercicio2.ipynb`
-- `04_banco_dados/aulas/BDEmpregados.pdf`
-- `04_banco_dados/CONTEUDO.md`
 
 **Atividade Prática:**
 - Modelar banco de dados de RH (BDEmpregados)
@@ -230,10 +194,6 @@
 - Como questionar a AI sobre o código dela
 
 **Pré-requisitos:** Semanas 1-2 (Python completo)
-
-**Materiais:**
-- `05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md`
-- `05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md`
 
 **Atividades:**
 - Resolver exercícios de Python (par/ímpar, soma até 0, temperatura)
@@ -264,9 +224,6 @@
 - Prática AI: descrever interface e receber sugestões
 
 **Pré-requisitos:** Semanas 1-7 (todos os módulos anteriores: Python, Estatística, Visualização, Banco de Dados)
-
-**Materiais:**
-- `05_dev_com_ai/modulo06_ux_prototipacao_ai/CONTEUDO.md`
 
 **Entregável:**
 - Wireframe da dashboard com seções obrigatórias (cabeçalho, KPIs, gráficos, filtros, fonte de dados)
@@ -299,9 +256,6 @@
 
 **Pré-requisitos:** Semana 9 (UX e wireframe)
 
-**Materiais:**
-- `05_dev_com_ai/modulo07_html_css_com_ai/CONTEUDO.md`
-
 **Entregável:**
 - Arquivos `index.html` e `style.css` com estrutura da dashboard
 - Aplicação do ciclo AI para cada seção (cabeçalho, KPIs, gráficos, rodapé)
@@ -332,10 +286,6 @@
 
 **Pré-requisitos:** Semana 10 (HTML/CSS)
 
-**Materiais:**
-- `05_dev_com_ai/modulo08_javascript_interatividade/CONTEUDO.md`
-- `05_dev_com_ai/modulo09_dados_frontend_integracao/CONTEUDO.md`
-
 **Entregável:**
 - Arquivo `script.js` com interatividade completa
 - Pelo menos 3 gráficos Chart.js funcionando
@@ -365,9 +315,6 @@
 - Critérios de avaliação: funcionalidade, integração, UX, uso crítico da AI
 
 **Pré-requisitos:** Semanas 1-11 (todo o conteúdo do curso)
-
-**Materiais:**
-- `05_dev_com_ai/modulo10_projeto_integrador/CONTEUDO.md`
 
 **Entregáveis Finais:**
 1. **Dashboard funcional:** `index.html`, `style.css`, `script.js`
