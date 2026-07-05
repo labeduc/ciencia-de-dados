@@ -6,7 +6,7 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 
 **Formato:** Jupyter Notebook (`.ipynb`), compatível com Google Colab, Jupyter e VS Code.  
 **Dataset principal:** `pokemons.csv` — 1.032 linhas × 44 colunas (usado da Aula 05 em diante).  
-**Total de aulas:** 16 aulas teóricas + 4 práticas
+**Total de aulas:** 17 aulas teóricas + 4 práticas
 
 ---
 
@@ -369,7 +369,7 @@ Introdução ao Plotly Express para criação de gráficos interativos com sinta
 
 **Pasta:** `aula-16/`
 
-Aula final do curso: construção de gráficos prontos para uso em apresentações e relatórios usando o objeto `Figure` do Plotly.
+Aula final do módulo de Plotly: construção de gráficos prontos para uso em apresentações e relatórios usando o objeto `Figure` do Plotly.
 
 **Tópicos:**
 - O objeto `Figure` do Plotly e sua estrutura (data + layout)
@@ -382,6 +382,34 @@ Aula final do curso: construção de gráficos prontos para uso em apresentaçõ
 - Configuração de tooltips personalizados (`hovertemplate`)
 
 **Biblioteca:** `plotly.graph_objects`
+
+---
+
+## Módulo 6 — IA Generativa aplicada à Análise de Dados
+
+Objetivo: aprender a usar ferramentas de IA generativa (ChatGPT, Claude, Gemini) como aliadas no fluxo de trabalho de análise de dados, sem abrir mão da validação crítica dos resultados.
+
+---
+
+### Aula 17 — IA Generativa aplicada à Análise de Dados
+
+**Pasta:** `aula-17/`
+
+Aula final do curso: como usar IA generativa para acelerar a análise de dados, mantendo o senso crítico sobre o que ela gera.
+
+**Tópicos:**
+- O que é IA Generativa e como funcionam os LLMs (ChatGPT, Claude, Gemini)
+- Por que (e quando) usar IA generativa na análise de dados
+- Como escrever bons prompts: contexto, objetivo, formato e restrições
+- Pedindo sugestões de tipo de gráfico
+- Gerando código Pandas a partir de um prompt
+- Usando IA para corrigir erros de código
+- Pedindo interpretação de resultados e gráficos
+- Limitações: alucinação, desatualização, privacidade e viés
+- Boas práticas de uso responsável de IA generativa
+- Ferramentas disponíveis: ChatGPT, Claude, Gemini, GitHub Copilot, Cursor
+
+**Biblioteca:** `pandas`, `seaborn`, `matplotlib`
 
 ---
 
@@ -409,6 +437,7 @@ Aula final do curso: construção de gráficos prontos para uso em apresentaçõ
 | P9-14 | Prática | `pratica-aula-09-14/` | Prática: Consolidação (Aulas 9 a 14) | Visualizações Avançadas |
 | 15 | Aula | `aula-15/` | Gráficos Interativos | Plotly |
 | 16 | Aula | `aula-16/` | Criando Visualizações Efetivas | Plotly |
+| 17 | Aula | `aula-17/` | IA Generativa aplicada à Análise de Dados | IA Generativa |
 
 ---
 
