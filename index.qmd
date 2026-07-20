@@ -1,14 +1,14 @@
 ---
-title: "LabEduc — Ciência de Dados"
-subtitle: "Curso completo de Ciência de Dados para iniciantes"
+title: "LabEduc"
+subtitle: "Curso completo de Ciência de Dados Integrada ao Front End"
 page-layout: full
 ---
 
 ::: {.hero-banner}
 
-# Olá, Cientista de Dados! 👋
+# Olá, Alunos! 👋
 
-Bem-vindo ao curso de **Ciência de Dados** do **LabEduc**!
+Bem-vindo ao curso de **Ciência de Dados Integrada ao Front End** do **LabEduc**!
 
 Este site contém todo o material didático do curso, organizado em módulos progressivos. Navegue pelas aulas usando o menu lateral e abra qualquer notebook diretamente no **Google Colab** para praticar.
 
@@ -57,30 +57,14 @@ SQL, modelagem relacional, consultas e integração com Python.
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
 ::: {.card .h-100}
 ::: {.card-body}
-### 🤖 Dev com AI {.card-title}
+### 🤖 FrontEnd Dev com AI {.card-title}
 
-Como usar AI Assistants para aprender, depurar e construir projetos.
+Desenvolvimento FronEnd e como integrar AI Assistants para aprender, depurar e construir projetos.
 
 [Começar →](05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md){.btn .btn-primary .btn-sm}
 :::
 :::
 :::
-
-:::
-
-
-## Estrutura do Curso
-
-| Módulo | Tema | Semanas | Formato |
-|--------|------|---------|---------|
-| 1 | Python para Ciência de Dados | 1–2 | Notebooks interativos |
-| 2 | Estatística e Análise de Dados | 3 | *Em construção* |
-| 3 | Visualização de Dados | 4–5 | Notebooks interativos |
-| 4 | Banco de Dados com SQL | 6–7 | Notebooks interativos |
-| 5 | Desenvolvimento com AI | 8–11 | Leitura + Projeto |
-| — | Projeto Final | 12 | Dashboard funcional |
-
-: {.striped .hover}
 
 
 ## Como usar este site

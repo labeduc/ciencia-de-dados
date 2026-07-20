@@ -1,9 +1,11 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "!99_material-antigo/"
 
 website:
-  title: "LabEduc — Ciência de Dados"
+  title: "LabEduc"
   repo-url: https://github.com/labeduc/ciencia-de-dados
   repo-actions: [source]
 
@@ -18,70 +20,74 @@ website:
         href: CONTEUDO_PROGRAMATICO.md
 
   sidebar:
-    - title: "Módulo 1 — Python"
+    - title: "Módulo 1 - Python"
       style: docked
       contents:
         - section: "Aulas"
           contents:
-            - text: "Aula 01 — Introdução ao Python"
+            - text: "Aula 01 - Introdução ao Python"
               href: 01_python/Python_AULA01.ipynb
-            - text: "Aula 02 — Tipos, Operações e Expressões"
+            - text: "Aula 01.1 - Primeiro Contato com AI"
+              href: 05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md
+            - text: "Aula 02 - Tipos, Operações e Expressões"
               href: 01_python/Python_AULA02.ipynb
-            - text: "Aula 03 — Controle de Fluxo"
+            - text: "Aula 03 - Controle de Fluxo"
               href: 01_python/Python_AULA03.ipynb
-            - text: "Aula 04 — Listas, Tuplas, Conjuntos e Dicionários"
+            - text: "Aula 04 - Listas, Tuplas, Conjuntos e Dicionários"
               href: 01_python/Python_AULA04.ipynb
-            - text: "Aula 05 — Funções"
+            - text: "Aula 05 - Funções"
               href: 01_python/Python_AULA05.ipynb
+            - text: "Aula 05.1 - Revisão com AI"
+              href: 05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md
 
-    - title: "Módulo 3 — Visualização de Dados"
+    - title: "Módulo 3 - Visualização de Dados"
       style: docked
       contents:
         - section: "Aulas"
           contents:
-            - text: "Aula 01 — Teoria de Visualização"
+            - text: "Aula 01 - Teoria de Visualização"
               href: 03_visualizacao/aula-01/index.ipynb
-            - text: "Aula 02 — Google Colab"
+            - text: "Aula 02 - Google Colab"
               href: 03_visualizacao/aula-02/index.ipynb
-            - text: "Aula 03 — Formatos de Dados"
+            - text: "Aula 03 - Formatos de Dados"
               href: 03_visualizacao/aula-03/index.ipynb
-            - text: "Aula 04 — Prática: Aulas 2 e 3"
+            - text: "Aula 04 - Prática: Aulas 2 e 3"
               href: 03_visualizacao/aula-04/index.ipynb
-            - text: "Aula 05 — Pandas"
+            - text: "Aula 05 - Pandas"
               href: 03_visualizacao/aula-05/index.ipynb
-            - text: "Aula 06 — Seaborn: Barras"
+            - text: "Aula 06 - Seaborn: Barras"
               href: 03_visualizacao/aula-06/index.ipynb
-            - text: "Aula 07 — Linhas e Áreas"
+            - text: "Aula 07 - Linhas e Áreas"
               href: 03_visualizacao/aula-07/index.ipynb
-            - text: "Aula 08 — Dispersão e Quadrantes"
+            - text: "Aula 08 - Dispersão e Quadrantes"
               href: 03_visualizacao/aula-08/index.ipynb
-            - text: "Aula 09 — Gráfico de Pizza"
+            - text: "Aula 09 - Gráfico de Pizza"
               href: 03_visualizacao/aula-09/index.ipynb
-            - text: "Aula 10 — Melhorando Visuais"
+            - text: "Aula 10 - Melhorando Visuais"
               href: 03_visualizacao/aula-10/index.ipynb
-            - text: "Aula 11 — Mapas de Rede"
+            - text: "Aula 11 - Mapas de Rede"
               href: 03_visualizacao/aula-11/index.ipynb
-            - text: "Aula 12 — Sankey Charts"
+            - text: "Aula 12 - Sankey Charts"
               href: 03_visualizacao/aula-12/index.ipynb
-            - text: "Aula 13 — Wordclouds"
+            - text: "Aula 13 - Wordclouds"
               href: 03_visualizacao/aula-13/index.ipynb
-            - text: "Aula 14 — Pandas e Bancos de Dados"
+            - text: "Aula 14 - Pandas e Bancos de Dados"
               href: 03_visualizacao/aula-14/index.ipynb
-            - text: "Aula 15 — Gráficos Interativos"
+            - text: "Aula 15 - Gráficos Interativos"
               href: 03_visualizacao/aula-15/index.ipynb
-            - text: "Aula 16 — Visualizações Efetivas"
+            - text: "Aula 16 - Visualizações Efetivas"
               href: 03_visualizacao/aula-16/index.ipynb
-            - text: "Aula 17 — Boas Práticas"
+            - text: "Aula 17 - Boas Práticas"
               href: 03_visualizacao/aula-17/index.ipynb
         - section: "Práticas"
           contents:
-            - text: "Prática 05 — Pandas"
+            - text: "Prática 05 - Pandas"
               href: 03_visualizacao/pratica-aula-05/index.ipynb
-            - text: "Prática 06 — Seaborn"
+            - text: "Prática 06 - Seaborn"
               href: 03_visualizacao/pratica-aula-06/index.ipynb
-            - text: "Prática 08 — Dispersão"
+            - text: "Prática 08 - Dispersão"
               href: 03_visualizacao/pratica-aula-08/index.ipynb
-            - text: "Prática 09–14 — Consolidação"
+            - text: "Prática 09-14 - Consolidação"
               href: 03_visualizacao/pratica-aula-09-14/index.ipynb
         - section: "Encontros"
           contents:
@@ -90,39 +96,41 @@ website:
             - text: "Encontro 02"
               href: 03_visualizacao/encontro-02/index.ipynb
 
-    - title: "Módulo 4 — Banco de Dados"
+    - title: "Módulo 4 - Banco de Dados"
       style: docked
       contents:
         - section: "Aulas"
           contents:
-            - text: "Aula 01 — Introdução e Consultas SQL"
+            - text: "Aula 01 - Introdução e Consultas SQL"
               href: 04_banco_dados/aulas/Aula01_Banco_Dados.ipynb
-            - text: "Aula 02 — DDL, DML e Relacionamentos"
+            - text: "Aula 02 - DDL, DML e Relacionamentos"
               href: 04_banco_dados/aulas/Aula02_Banco_Dados.ipynb
         - section: "Práticas"
           contents:
-            - text: "Prática 01 — SQL Island"
+            - text: "Prática 01 - SQL Island"
               href: 04_banco_dados/aulas/Aula01_SQL_Island.ipynb
-            - text: "Prática 02 — BDEmpregados"
+            - text: "Prática 02 - BDEmpregados"
               href: 04_banco_dados/aulas/Aula02_Exercicio2.ipynb
 
-    - title: "Módulo 5 — Dev com AI"
+    - title: "Módulo 5 - Dev com AI"
       style: docked
       contents:
-        - text: "Módulo 1 — Primeiro Contato com AI"
-          href: 05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md
-        - text: "Módulo 2 — Revisão com AI"
-          href: 05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md
-        - text: "Módulo 6 — UX e Prototipação"
-          href: 05_dev_com_ai/modulo06_ux_prototipacao_ai/CONTEUDO.md
-        - text: "Módulo 7 — HTML e CSS com AI"
-          href: 05_dev_com_ai/modulo07_html_css_com_ai/CONTEUDO.md
-        - text: "Módulo 8 — JavaScript e Interatividade"
-          href: 05_dev_com_ai/modulo08_javascript_interatividade/CONTEUDO.md
-        - text: "Módulo 9 — Dados no Frontend"
-          href: 05_dev_com_ai/modulo09_dados_frontend_integracao/CONTEUDO.md
-        - text: "Módulo 10 — Projeto Integrador"
-          href: 05_dev_com_ai/modulo10_projeto_integrador/CONTEUDO.md
+      - section: "Aulas"
+        contents:
+          - text: "Aula 01 - Primeiro Contato com AI"
+            href: 05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md
+          - text: "Aula 01.2 - Revisão com AI"
+            href: 05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md
+          - text: "Aula 02 - UX e Prototipação"
+            href: 05_dev_com_ai/modulo06_ux_prototipacao_ai/CONTEUDO.md
+          - text: "Aula 03 - HTML e CSS com AI"
+            href: 05_dev_com_ai/modulo07_html_css_com_ai/CONTEUDO.md
+          - text: "Aula 04 - JavaScript e Interatividade"
+            href: 05_dev_com_ai/modulo08_javascript_interatividade/CONTEUDO.md
+          - text: "Aula 05 - Dados no Frontend"
+            href: 05_dev_com_ai/modulo09_dados_frontend_integracao/CONTEUDO.md
+          - text: "Aula 06 - Projeto Integrador"
+            href: 05_dev_com_ai/modulo10_projeto_integrador/CONTEUDO.md
 
 format:
   html:
