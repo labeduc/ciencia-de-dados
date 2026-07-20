@@ -2,7 +2,8 @@ project:
   type: website
   output-dir: _site
   render:
-    - "!99_material-antigo/"
+    - "**"
+    - "!99_material-antigo/**"
 
 website:
   title: "LabEduc"
@@ -87,7 +88,7 @@ website:
               href: 03_visualizacao/pratica-aula-06/index.ipynb
             - text: "Prática 08 - Dispersão"
               href: 03_visualizacao/pratica-aula-08/index.ipynb
-            - text: "Prática 09-14 - Consolidação"
+            - text: "Prática 09 - Consolidação"
               href: 03_visualizacao/pratica-aula-09-14/index.ipynb
         - section: "Encontros"
           contents:
@@ -115,22 +116,22 @@ website:
     - title: "Módulo 5 - Dev com AI"
       style: docked
       contents:
-      - section: "Aulas"
-        contents:
-          - text: "Aula 01 - Primeiro Contato com AI"
-            href: 05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md
-          - text: "Aula 01.2 - Revisão com AI"
-            href: 05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md
-          - text: "Aula 02 - UX e Prototipação"
-            href: 05_dev_com_ai/modulo06_ux_prototipacao_ai/CONTEUDO.md
-          - text: "Aula 03 - HTML e CSS com AI"
-            href: 05_dev_com_ai/modulo07_html_css_com_ai/CONTEUDO.md
-          - text: "Aula 04 - JavaScript e Interatividade"
-            href: 05_dev_com_ai/modulo08_javascript_interatividade/CONTEUDO.md
-          - text: "Aula 05 - Dados no Frontend"
-            href: 05_dev_com_ai/modulo09_dados_frontend_integracao/CONTEUDO.md
-          - text: "Aula 06 - Projeto Integrador"
-            href: 05_dev_com_ai/modulo10_projeto_integrador/CONTEUDO.md
+        - section: "Aulas"
+          contents:
+            - text: "Aula 01 - Primeiro Contato com AI"
+              href: 05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md
+            - text: "Aula 01.2 - Revisão com AI"
+              href: 05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md
+            - text: "Aula 02 - UX e Prototipação"
+              href: 05_dev_com_ai/modulo06_ux_prototipacao_ai/CONTEUDO.md
+            - text: "Aula 03 - HTML e CSS com AI"
+              href: 05_dev_com_ai/modulo07_html_css_com_ai/CONTEUDO.md
+            - text: "Aula 04 - JavaScript e Interatividade"
+              href: 05_dev_com_ai/modulo08_javascript_interatividade/CONTEUDO.md
+            - text: "Aula 05 - Dados no Frontend"
+              href: 05_dev_com_ai/modulo09_dados_frontend_integracao/CONTEUDO.md
+            - text: "Aula 06 - Projeto Integrador"
+              href: 05_dev_com_ai/modulo10_projeto_integrador/CONTEUDO.md
 
 format:
   html:
