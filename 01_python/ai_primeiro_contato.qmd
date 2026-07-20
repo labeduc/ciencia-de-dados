@@ -2,4 +2,9 @@
 title: "Primeiro Contato com AI"
 ---
 
-{{< include ../05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md >}}
+::: {.callout-note}
+## Conteúdo Complementar
+Este material é complementar à **Aula 01 - Introdução ao Python**. Você aprenderá o que é um AI Assistant, como conversar com ele e como usá-lo para acelerar o aprendizado de programação.
+:::
+
+[📖 Acessar o conteúdo completo →](../05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.html){.btn .btn-primary .btn-lg}

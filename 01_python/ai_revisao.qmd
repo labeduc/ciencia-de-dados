@@ -2,4 +2,9 @@
 title: "Revisão com AI"
 ---
 
-{{< include ../05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.md >}}
+::: {.callout-note}
+## Conteúdo Complementar
+Este material é complementar à **Aula 05 - Funções**. Você vai revisar os conceitos de Python aprendidos até aqui usando AI como ferramenta de estudo.
+:::
+
+[📖 Acessar o conteúdo completo →](../05_dev_com_ai/modulo02_revisao_com_ai/CONTEUDO.html){.btn .btn-primary .btn-lg}
