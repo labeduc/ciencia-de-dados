@@ -18,7 +18,7 @@ Este site contém todo o material didático do curso, organizado em módulos pro
 
 ::: {.grid}
 
-::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 ::: {.card .h-100}
 ::: {.card-body}
 ### 🐍 Python {.card-title}
@@ -30,7 +30,7 @@ Fundamentos da linguagem, tipos de dados, controle de fluxo, estruturas de dados
 :::
 :::
 
-::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 ::: {.card .h-100}
 ::: {.card-body}
 ### 📊 Visualização {.card-title}
@@ -42,7 +42,7 @@ Gráficos com Seaborn, Matplotlib e Plotly — de barras simples a visualizaçõ
 :::
 :::
 
-::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 ::: {.card .h-100}
 ::: {.card-body}
 ### 🗄️ Banco de Dados {.card-title}
@@ -54,7 +54,7 @@ SQL, modelagem relacional, consultas e integração com Python.
 :::
 :::
 
-::: {.g-col-12 .g-col-md-6 .g-col-lg-3}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 ::: {.card .h-100}
 ::: {.card-body}
 ### 🤖 FrontEnd Dev com AI {.card-title}
@@ -64,6 +64,8 @@ Desenvolvimento FronEnd e como integrar AI Assistants para aprender, depurar e c
 [Começar →](05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md){.btn .btn-primary .btn-sm}
 :::
 :::
+:::
+
 :::
 
 

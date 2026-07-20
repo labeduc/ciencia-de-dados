@@ -1,0 +1,5 @@
+---
+title: "Primeiro Contato com AI"
+---
+
+{{< include ../05_dev_com_ai/modulo01_primeiro_contato_ai/CONTEUDO.md >}}
