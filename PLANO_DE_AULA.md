@@ -7,7 +7,7 @@
 | **Python** | 2 aulas | Semanas 1-2 |
 | **Estatística** | 1 aula | Semana 3 |
 | **Visualização** | 2 aulas | Semanas 4-5 |
-| **Banco de Dados** | 2 aulas | Semanas 6-7 |
+| **Banco de Dados** | 4 aulas | Semanas 6-7 |
 | **Dev com AI** | 4 aulas | Semanas 8-11 |
 | **Projeto Final** | 1 aula | Semana 12 |
 | **Total** | 12 aulas | 12 semanas |
@@ -125,9 +125,9 @@
 
 ---
 
-## Semana 6 — Banco de Dados: Consultas SQL Básicas
+## Semana 6 — Banco de Dados: Consultas SQL e Manipulação
 
-**Categoria:** Banco de Dados (Aula 1/2)
+**Categoria:** Banco de Dados (Aulas 1 e 2)
 
 **Conteúdo:**
 - Aula 01 do módulo `04_banco_dados/`
@@ -135,41 +135,51 @@
   - Comando SELECT e suas cláusulas (WHERE, ORDER BY, GROUP BY, HAVING)
   - Operadores de comparação e lógicos
   - Funções de agregação
+- Aula 02 do módulo `04_banco_dados/`
+  - Comandos INSERT, UPDATE, DELETE
+  - DDL: CREATE TABLE, DROP TABLE e restrições (constraints)
+  - Integridade referencial e JOIN entre tabelas relacionadas
 
 **Objetivos:**
 - Compreender o papel dos bancos de dados relacionais
-- Dominar consultas SQL básicas
-- Filtrar, ordenar e agrupar dados
+- Dominar consultas SQL, inserções, atualizações e deleções
+- Entender integridade referencial e relacionamentos
 
 **Pré-requisitos:** Semana 3 (Estatística - conceitos de dados)
 
 **Atividade Prática:**
-- SQL Island: exercícios gamificados com SELECT e WHERE
-- Consultar dataset de vendas de videogames
+- **SQL Island (`Aula01_SQL_Island`):** exercícios gamificados de consultas
+- **Prática do VideoGame Sales (`Aula01_Banco_Dados`):** consultas de vendas
+- **Prática de manipulação (`Aula02_Banco_Dados`):** CRUD completo em SQLite
 
 ---
 
-## Semana 7 — Banco de Dados: DDL, DML e Relacionamentos
+## Semana 7 — Banco de Dados: Modelagem de Dados e NoSQL (MongoDB)
 
-**Categoria:** Banco de Dados (Aula 2/2)
+**Categoria:** Banco de Dados (Aulas 3 e 4)
 
 **Conteúdo:**
-- Aula 02 do módulo `04_banco_dados/`
-  - Comandos INSERT, UPDATE, DELETE
-  - DDL: CREATE TABLE, DROP TABLE
-  - Restrições (constraints): PRIMARY KEY, FOREIGN KEY
-  - JOIN entre tabelas relacionadas
+- Aula 03 do módulo `04_banco_dados/`
+  - Modelagem Relacional: Entidades, Atributos e Relacionamentos (1:1, 1:N, N:N)
+  - Níveis de modelagem (Conceitual, Lógico e Físico) e Diagramas ER
+  - Normalização de dados e Boas Práticas (8 regras de ouro)
+- Aula 04 do módulo `04_banco_dados/`
+  - SQL vs. NoSQL: diferenças, vantagens e quando usar cada um
+  - MongoDB: coleções, documentos, campos e dados aninhados (JSON)
+  - CRUD no MongoDB usando a biblioteca `mongita` (em memória)
+  - NoSQL no contexto de Inteligência Artificial (RAG, cache, busca vetorial)
 
 **Objetivos:**
-- Criar e manipular tabelas com SQL
-- Entender integridade referencial e relacionamentos
-- Modelar um banco de dados relacional completo
+- Identificar entidades, relacionamentos e construir Diagramas ER
+- Criar e estruturar um banco relacional do zero com base em um modelo lógico
+- Compreender a diferença entre SQL e NoSQL e aplicar comandos CRUD com MongoDB
 
-**Pré-requisitos:** Semana 6 (Banco de Dados Consultas Básicas)
+**Pré-requisitos:** Semana 6 (Banco de Dados Consultas e Manipulação)
 
 **Atividade Prática:**
-- Modelar banco de dados de RH (BDEmpregados)
-- Criar tabelas, inserir dados e fazer consultas com JOIN
+- **Atividade BDEmpregados (`Aula02_Exercicio2`):** modelar, criar e consultar um banco de RH completo do zero
+- **Prática de Rede Social de Games (`Aula03_Banco_Dados`):** criar modelo lógico e físico N:N de uma rede de games
+- **Prática de MongoDB (`Aula04_Banco_Dados`):** consultas avançadas com filtros e busca em listas/subdocumentos, mais o desafio de partidas de jogos
 
 ---
 

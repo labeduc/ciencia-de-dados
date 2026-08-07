@@ -33,7 +33,7 @@ Módulo completo de visualização de dados, com 16 aulas e cadernos de prática
 
 ### 04_banco_dados
 
-Módulo de banco de dados relacional e SQL. Os notebooks apresentam conceitos fundamentais de bancos de dados e exercícios práticos de SQL, incluindo criação de tabelas, modelagem de dados e consultas. Acompanha material teórico em PDF.
+Módulo de Banco de Dados com SQL e NoSQL. Os notebooks partem da teoria e consultas fundamentais de bancos de dados relacionais (SQLite com SQL), passando por criação de tabelas, modelagem de dados detalhada (Diagramas ER, relacionamentos N:N e normalização), até a introdução prática a bancos NoSQL baseados em documentos JSON com MongoDB (usando a biblioteca `mongita`). Acompanha material teórico de apoio.
 
 ### 05_dev_com_ai
 

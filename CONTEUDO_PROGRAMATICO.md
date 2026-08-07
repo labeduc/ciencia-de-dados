@@ -426,14 +426,14 @@ Curso completo de Visualização de Dados com Python voltado para iniciantes e p
 
 ---
 
-## Módulo 4 - Banco de Dados com SQL
+## Módulo 4 - Banco de Dados com SQL e NoSQL
 
 ### Sobre o Curso
-Curso introdutório de Banco de Dados Relacionais e SQL voltado para iniciantes em Ciência de Dados.
+Curso introdutório de Banco de Dados voltado para iniciantes em Ciência de Dados. O conteúdo parte da teoria de bancos de dados relacionais, evolui pela linguagem SQL e modelagem de dados, e culmina com uma introdução a bancos NoSQL com MongoDB.
 
 **Formato:** Jupyter Notebook (`.ipynb`), compatível com Google Colab, Jupyter e VS Code.  
-**SGBD utilizado:** SQLite, acessado via biblioteca `sqlite3` e extensão `ipython-sql` (`%sql` / `%%sql`).  
-**Total de aulas:** 2 aulas teórico-práticas + 2 notebooks de exercícios.
+**SGBD utilizado:** SQLite (via biblioteca `sqlite3` e extensão `ipython-sql`) e MongoDB (via biblioteca `mongita`).  
+**Total de aulas:** 4 aulas teórico-práticas + 2 notebooks de exercícios.
 
 ---
 
@@ -494,6 +494,45 @@ Curso introdutório de Banco de Dados Relacionais e SQL voltado para iniciantes 
 8. Contar quantos empregados existem por projeto
 9. Contar quantos projetos existem por departamento
 10. Contar quantos dependentes existem no total
+
+---
+
+### Aula 03 — Modelagem de Dados
+**Tópicos:**
+- O que é modelagem de dados e por que ela importa na era da IA
+- Os 3 conceitos fundamentais: Entidade, Atributo e Relacionamento
+- Tipos de relacionamento: 1:1, 1:N e N:N (tabela intermediária)
+- Os 3 níveis de modelagem: Conceitual, Lógico e Físico
+- Diagrama Entidade-Relacionamento (ER): elementos e leitura
+- Prática guiada: modelagem completa de uma Rede Social de Games (Jogador, Jogo, Conquista, Partida)
+- Do modelo conceitual ao `CREATE TABLE` com constraints
+- Inserção de dados temáticos (nicknames, jogos reais) e consultas com `JOIN`
+- Normalização: comparação tabela única vs. normalizada
+- Boas práticas de modelagem (8 regras de ouro)
+- Exercícios: 5 consultas + 1 desafio (criar tabela N:N `Conquista_Jogador`)
+
+---
+
+### Aula 04 — NoSQL e MongoDB
+**Tópicos:**
+- SQL vs NoSQL: diferenças, vantagens e quando usar cada um
+- Tipos de banco NoSQL: Documentos, Chave-Valor, Colunar e Grafos
+- MongoDB: coleções, documentos, campos — vocabulário SQL → MongoDB
+- O poder dos documentos: dados aninhados (listas e objetos dentro de documentos)
+- Setup com `mongita` (versão leve do MongoDB para aprendizado)
+- `insert_one()` e `insert_many()` — inserção de documentos com campos variáveis
+- `find()` e `find_one()` — consultas com operadores (`$gt`, `$lt`, `$gte`, `$lte`, `$ne`, `$in`, `$or`)
+- Busca dentro de listas e subdocumentos (dot notation)
+- `sort()` e `limit()` — ordenação e limitação de resultados
+- `update_one()` e `update_many()` — operadores `$set`, `$inc`, `$push`, `$pull`, `$unset`
+- `delete_one()` e `delete_many()` — remoção de documentos
+- `count_documents()` — contagem com filtros
+- Comparação lado a lado: SQL vs MongoDB
+- Quando usar SQL vs NoSQL — critérios de decisão
+- NoSQL e IA: RAG, cache, busca vetorial
+- Exercícios: 6 consultas + 1 desafio (criar coleção de partidas)
+
+---
 
 ---
 
