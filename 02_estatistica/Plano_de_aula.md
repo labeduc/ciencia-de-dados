@@ -17,7 +17,7 @@ Este repositório contém o planeamento estruturado para o curso de **Estatísti
 
 ## 📖 Detalhe dos Módulos
 
-### Módulo 1: Introdução, Recolha e Organização de Dados
+### Módulo 1: Introdução, Recolha e Organização de Dados {#estatistica-aula-01}
 * **Objetivos:** Compreender os conceitos fundamentais de estatística; aprender a recolher e estruturar massas de dados; identificar variáveis de referência.
 * **Conteúdos Programáticos:**
   * Definição de Estatística, População e Amostra.
@@ -28,7 +28,7 @@ Este repositório contém o planeamento estruturado para o curso de **Estatísti
   * **Análise de Cenário:** Reflexão sobre a organização financeira pessoal ao longo de um ano (365 dias) e escolha do tamanho amostral adequado.
   * **Exercício de Construção:** Criação de uma tabela de dados com categorias predefinidas e subsequente ordenação/agrupamento justificando o critério analítico escolhido.
 
-### Módulo 2: Medidas de Tendência Central e Frequências
+### Módulo 2: Medidas de Tendência Central e Frequências {#estatistica-aula-02}
 * **Objetivos:** Calcular e identificar informações essenciais em conjuntos de dados; preencher dados em falta; aplicar fórmulas de estatística descritiva em planilhas.
 * **Conteúdos Programáticos:**
   * Conceito de Mínimo (`MÍN`) e Máximo (`MÁX`) num conjunto de dados (amplitude primária).
@@ -41,7 +41,7 @@ Este repositório contém o planeamento estruturado para o curso de **Estatísti
   * **Atividade Prática 2 (Consumo de Combustível):** Importação de ficheiros CSV para calcular médias de despesas mensais e identificar extremos (maior e menor gasto).
   * **Atividade Prática 3 (Análise Amostral):** Avaliação da variação da frequência relativa à medida que a amostra cresce.
 
-### Módulo 3: Ordenação de Dados e a Mediana
+### Módulo 3: Ordenação de Dados e a Mediana {#estatistica-aula-03}
 * **Objetivos:** Compreender o impacto do ordenamento na análise de dados; calcular e interpretar a mediana como medida robusta de tendência central.
 * **Conteúdos Programáticos:**
   * O conceito de Mediana (`MED`) como o valor que divide o conjunto de dados exatamente ao meio (50% dos dados abaixo, 50% acima).
@@ -53,7 +53,7 @@ Este repositório contém o planeamento estruturado para o curso de **Estatísti
   * **Estudo de Caso:** Análise do impacto de valores extremos (*outliers*) em um conjunto de salários ou despesas, comparando como a média e a mediana reagem a esses dados discrepantes.
   * **Laboratório de Dados:** Resolução prática de exercícios de cálculo de mediana utilizando conjuntos de dados pares e ímpares extraídos das atividades anteriores.
 
-### Módulo 4: Análise Avançada, Correlação e Projeções
+### Módulo 4: Análise Avançada, Correlação e Projeções {#estatistica-aula-04}
 * **Objetivos:** Analisar criticamente distribuições de dados; identificar relações matemáticas entre variáveis; projetar valores futuros ou intermediários com segurança.
 * **Conteúdos Programáticos:**
   * **Desvio Padrão e Variância:** Introdução ao conceito de dispersão de dados em torno da média e a sua aplicação prática na deteção de anomalias/fraudes (*Machine Learning*).

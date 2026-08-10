@@ -33,7 +33,19 @@ Fundamentos da linguagem, tipos de dados, controle de fluxo, estruturas de dados
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
 ::: {.card .h-100}
 ::: {.card-body}
-### 📊 Visualização {.card-title}
+### Estatística {.card-title}
+
+Coleta, organização, frequências, médias, medianas, correlação e projeções em planilhas.
+
+[Começar →](02_estatistica/Plano_de_aula.md#estatistica-aula-01){.btn .btn-primary .btn-sm}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
+::: {.card .h-100}
+::: {.card-body}
+### Visualização {.card-title}
 
 Gráficos com Seaborn, Matplotlib e Plotly — de barras simples a visualizações interativas.
 
