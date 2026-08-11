@@ -162,6 +162,8 @@ website:
               href: Ferramentas/index.md
             - text: "Google Colab"
               href: Ferramentas/google-colab.md
+            - text: "GitHub"
+              href: Ferramentas/github.md
             - text: "CodePen.io"
               href: Ferramentas/codepen.md
             - text: "VSCode"
