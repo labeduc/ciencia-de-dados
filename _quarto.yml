@@ -19,6 +19,8 @@ website:
         href: PLANO_DE_AULA.md
       - text: "Conteúdo Programático"
         href: CONTEUDO_PROGRAMATICO.md
+      - text: "Ferramentas"
+        href: Ferramentas/index.md
 
   sidebar:
     - title: "Módulo 1 - Python"
@@ -150,6 +152,20 @@ website:
               href: 05_dev_com_ai/modulo09_dados_frontend_integracao/CONTEUDO.md
             - text: "Aula 06 - Projeto Integrador"
               href: 05_dev_com_ai/modulo10_projeto_integrador/CONTEUDO.md
+
+    - title: "Ferramentas"
+      style: docked
+      contents:
+        - section: "Guias"
+          contents:
+            - text: "Visão Geral"
+              href: Ferramentas/index.md
+            - text: "Google Colab"
+              href: Ferramentas/google-colab.md
+            - text: "CodePen.io"
+              href: Ferramentas/codepen.md
+            - text: "VSCode"
+              href: Ferramentas/vscode.md
 
 format:
   html:
