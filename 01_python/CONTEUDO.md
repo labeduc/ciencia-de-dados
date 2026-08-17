@@ -2,11 +2,11 @@
 
 ## Sobre o Curso
 
-Curso introdutório de Python voltado para iniciantes que desejam ingressar em programação e ciência de dados. O conteúdo parte dos conceitos mais básicos da linguagem e evolui progressivamente até a criação de funções reutilizáveis e manipulação de estruturas de dados complexas.
+Curso introdutório de Python voltado para iniciantes que desejam ingressar em programação e ciência de dados. O conteúdo parte dos conceitos mais básicos da linguagem e evolui progressivamente até a criação de funções reutilizáveis, a manipulação de estruturas de dados e o uso de bibliotecas e módulos.
 
 **Formato:** Jupyter Notebook (`.ipynb`), compatível com Google Colab, Thonny, REPL e VS Code.  
 **Pré-requisito:** Noções de lógica de programação (conceitos como variáveis, condições e repetição são referenciados em comparação com Scratch).  
-**Total de aulas:** 5 aulas teórico-práticas
+**Total de aulas:** 6 aulas teórico-práticas
 
 ---
 
@@ -27,16 +27,22 @@ Apresentação da linguagem Python e dos elementos básicos para escrever os pri
 - Plataformas de desenvolvimento: Thonny, Programiz, REPL, VSCode, PyCharm
 - Como executar um programa Python (extensão `.py` e interpretador do Colab)
 - Comentários com `#`
-- Variáveis: declaração e uso
+- Variáveis: declaração, atribuição simples e atribuição múltipla
+- Regras e boas práticas para nomes de variáveis; palavras reservadas com o módulo `keyword`
 - Strings: aspas simples, duplas e multilinha (`'''`)
 - Saída de dados com `print()`
 - Entrada de dados com `input()`
 - Conversão de tipo com `int()`
 - Indentação e blocos de código
+- Inspeção de objetos com `dir()` e consulta de documentação com o atributo `__doc__`
 
 **Exercícios:**
-- Programa que lê nome e idade e calcula o ano de nascimento
-- Correção de programa com indentação errada (impressão de tabela de quadrados e cubos)
+- Cálculo da área de um retângulo com comentários explicativos
+- Criação e atribuição de variáveis de nome e idade
+- Criação, indexação e transformação de uma mensagem (`upper()`)
+- Leitura de nome e idade com `input()`
+- Exibição de mensagens personalizadas com `print()`
+- Programa de boas-vindas com entrada do usuário e indentação correta
 
 ---
 
@@ -54,6 +60,7 @@ Apresentação dos tipos de dados nativos do Python e das operações disponíve
 - Operadores matemáticos: `+`, `-`, `*`, `/`, `**`, `//`, `%`, negação unária
 - Operadores relacionais: `==`, `!=`, `>`, `>=`, `<`, `<=`, intervalo `a < x < b`
 - Operadores booleanos: `&`, `|`, `^`, `not`
+- Construção e interpretação de tabelas-verdade
 - Parênteses e precedência de operadores
 
 **Exercício:**
@@ -157,15 +164,68 @@ Introdução ao conceito de funções no Python: definição, parâmetros, retor
 
 ---
 
+## Módulo 5 — Bibliotecas e Módulos
+
+Objetivo: compreender como ampliar os recursos do Python por meio de bibliotecas, localizar pacotes e importar módulos de diferentes formas.
+
+---
+
+### Aula 06 — Bibliotecas e Módulos
+
+**Arquivo:** `Python_AULA06.ipynb`
+
+Apresentação do ecossistema de bibliotecas do Python, do Python Package Index (PyPI) e das principais formas de importação de módulos e objetos.
+
+**Tópicos:**
+- Conceito e finalidade de bibliotecas, pacotes e módulos
+- Ambientes para uso de bibliotecas: Google Colab, Thonny, VS Code, Anaconda e Jupyter
+- Busca de pacotes e consulta de documentação no PyPI
+- Identificação de erro causado por pacote não instalado
+- Instalação de pacotes no ambiente Python
+- Importação de um módulo com `import modulo`
+- Uso de apelidos com `import modulo as apelido`
+- Importação seletiva com `from modulo import objeto`
+- Renomeação de objetos importados com `as`
+- Exemplos com `math` e `TinyDB`
+
+**Exercícios e demonstrações:**
+- Instalação e importação do pacote `tinydb`
+- Uso de `math` com apelido
+- Importação seletiva de `sqrt` e `pi`
+- Consulta da documentação de um pacote no PyPI
+
+---
+
+## Conteúdos Complementares — Aprendizagem com IA
+
+Os materiais abaixo complementam os notebooks e podem ser estudados de forma assíncrona, sem ampliar a carga horária presencial do curso.
+
+### Aula 01.1 — Primeiro Contato com AI
+
+**Arquivo:** `ai_primeiro_contato.qmd`
+
+Material complementar à Aula 01 sobre o que é um assistente de IA, como formular perguntas e como utilizá-lo como apoio ao aprendizado de programação.
+
+### Aula 05.1 — Revisão com AI
+
+**Arquivo:** `ai_revisao.qmd`
+
+Material complementar à Aula 05 para revisar os fundamentos de Python e funções com o apoio de um assistente de IA.
+
+---
+
 ## Resumo Geral
 
 | # | Arquivo | Título | Módulo |
 |---|---|---|---|
 | 01 | `Python_AULA01.ipynb` | Introdução ao Python | Fundamentos da Linguagem |
+| 01.1 | `ai_primeiro_contato.qmd` | Primeiro Contato com AI | Conteúdo complementar assíncrono |
 | 02 | `Python_AULA02.ipynb` | Tipos Básicos, Operações e Expressões | Fundamentos da Linguagem |
 | 03 | `Python_AULA03.ipynb` | Controle de Fluxo e Repetição | Controle de Fluxo |
 | 04 | `Python_AULA04.ipynb` | Listas, Tuplas, Conjuntos e Dicionários | Estruturas de Dados |
 | 05 | `Python_AULA05.ipynb` | Funções | Funções e Programação Modular |
+| 05.1 | `ai_revisao.qmd` | Revisão com AI | Conteúdo complementar assíncrono |
+| 06 | `Python_AULA06.ipynb` | Bibliotecas e Módulos | Bibliotecas e Módulos |
 
 ---
 
@@ -177,5 +237,6 @@ Introdução ao conceito de funções no Python: definição, parâmetros, retor
 | **Ambiente** | Google Colab, Thonny, REPL, VS Code |
 | **Tipos de dados** | `str`, `int`, `float`, `complex`, `bool` |
 | **Estruturas de dados** | `list`, `tuple`, `set`, `dict` |
-| **Biblioteca padrão** | `math` (`sqrt`) |
+| **Bibliotecas e pacotes** | `math` (`sqrt`, `pow`, `pi`), `tinydb` |
+| **Ecossistema e importação** | PyPI, `import`, `as`, `from ... import` |
 | **Funções built-in** | `print()`, `input()`, `int()`, `float()`, `bool()`, `str()`, `type()`, `len()`, `list()`, `set()`, `dict()`, `range()`, `map()` |

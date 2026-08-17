@@ -41,3 +41,17 @@
 .card-body {
   padding: 1.5rem;
 }
+.colab-launch {
+  margin-bottom: 1rem;
+}
+
+.colab-launch img {
+  display: block;
+  height: 20px;
+}
+
+.colab-launch a:focus-visible {
+  border-radius: 3px;
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}

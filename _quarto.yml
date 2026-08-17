@@ -42,6 +42,8 @@ website:
               href: 01_python/Python_AULA05.ipynb
             - text: "Aula 05.1 - Revisão com AI"
               href: 01_python/ai_revisao.qmd
+            - text: "Aula 06 - Bibliotecas e Módulos"
+              href: 01_python/Python_AULA06.ipynb
 
     - title: "Módulo 2 - Estatística e Análise de Dados"
       style: docked
