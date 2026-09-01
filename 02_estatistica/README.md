@@ -7,10 +7,11 @@ Material para jovens do ensino médio que querem aprender estatística e anális
 
 | Arquivo | O que é |
 |---|---|
-| `material_teorico.md` | A história completa, em texto, com todas as explicações teóricas. Ideal pra ler primeiro, ou pra estudar sem precisar rodar código. |
+| `material_teorico.md` | A história completa, em texto, com todas as explicações teóricas e diagramas ilustrativos. Ideal pra ler primeiro, ou pra estudar sem precisar rodar código. |
 | `curso_estatistica_guaiba.ipynb` | O notebook interativo (Jupyter/Google Colab). A mesma história, mas com código pra rodar, gráficos gerados na hora e exercícios práticos. |
 | `dados/cafe.csv` | Base real de pesquisa com o tipo de café preferido por 43 pessoas. Usado nos capítulos de frequência e amostragem. |
 | `dados/combustivel.csv` | Histórico real de 65 abastecimentos de um carro, usado no estudo de caso de análise de dados (distância, litros, valor). |
+| `images/` | Diagramas e gráficos usados no `material_teorico.md` (população/amostra, frequência, medidas de posição, tipos de gráfico, desvio padrão, correlação/regressão e o estudo de caso do combustível). |
 
 ## 🚀 Como abrir no Google Colab
 

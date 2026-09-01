@@ -29,6 +29,8 @@ Se você comprar só pensando no que **você** quer beber, a resposta é fácil,
 
 Repare que população **não precisa ser gente**: pode ser um ano inteiro de gastos, todos os cafés vendidos em um mês, todas as corridas de um app. O que importa é que é o "todo" que você quer conhecer, e a amostra é o pedaço que você consegue efetivamente observar.
 
+![Diagrama mostrando 52 pontos em círculo representando a população do passeio, com 6 pontos destacados em laranja representando a amostra](images/01_populacao_amostra.png)
+
 E aqui mora o primeiro perigo: **uma amostra pequena e mal escolhida pode te enganar**. Se você perguntar só pra você mesmo (uma "amostra" de 1 pessoa), a chance de acertar o gosto de 52 pessoas é praticamente nula. Uma amostra de 6 já é bem melhor — mas ainda tem seus riscos, como veremos.
 
 ---
@@ -75,6 +77,8 @@ Para o nosso grupinho de 6:
 | Água | 1 | 17% |
 
 O valor que mais aparece — nesse caso, Guaraná, com 3 ocorrências — é chamado de **moda**. É o "gosto do grupo", pelo menos segundo essa amostra.
+
+![Gráfico de barras horizontais mostrando a frequência de cada bebida escolhida pelos 6 amigos: Guaraná 3, Água de coco 1, Suco de laranja 1, Água 1](images/02_frequencia_bebidas.png)
 
 Se você multiplicar a frequência relativa pelas 52 pessoas do passeio, teria uma estimativa de quanto comprar de cada bebida: cerca de 26 guaranás, 9 águas de coco, 9 sucos de laranja e 9 águas. Somando isso dá **53**, uma pessoa a mais que as 52 do passeio — não é erro de conta, é só o efeito de arredondar cada categoria separadamente (26 + 9 + 9 + 9 = 53). Isso é normal em estatística: ao arredondar partes de um todo uma por uma, a soma pode "escapar" um pouquinho do total. Na prática, não é motivo pra preocupação — só ajuste a última categoria pra fechar exatamente 52, se quiser ser certinho.
 
@@ -132,6 +136,8 @@ A diferença entre média e mediana importa bastante quando existe algum valor m
 
 A média sobe bastante por causa do 1,95 (alguém bem mais alto que o resto), enquanto a mediana (média entre 1,61 e 1,65 = **1,63**) continua representando melhor "a altura típica" do grupo. Por isso, quando os dados têm valores muito extremos, a mediana costuma contar uma história mais justa que a média sozinha.
 
+![Linha do tempo com as alturas dos 6 amigos, indicando o ponto mínimo, o ponto máximo, a linha da média (1,68) e a linha da mediana (1,63)](images/03_medidas_posicao.png)
+
 ---
 
 ## Capítulo 7 — Vendo os dados em vez de só ler números
@@ -143,6 +149,8 @@ Uma tabela de números é útil, mas o olho humano entende **padrões visuais** 
 - **Gráfico de barras/colunas**: compara valores entre categorias diferentes, com a altura (ou comprimento) proporcional à frequência.
 - **Gráfico de linha**: usado quando os dados têm uma ordem natural, geralmente o tempo no eixo horizontal (eixo x) e o valor que muda no eixo vertical (eixo y).
 - **Histograma**: parecido com o de colunas, mas agrupa valores numéricos em faixas (por exemplo, "de 0 a 20 reais", "de 20 a 40 reais"), útil quando os valores são muito variados e contínuos.
+
+![Cinco gráficos diferentes (pontos, pizza, barras, colunas e linha) representando os mesmos dados de preferência de café](images/04_tipos_de_grafico.png)
 
 No notebook vamos gerar todos esses gráficos a partir dos dados do café e, mais adiante, dos dados de combustível.
 
@@ -158,6 +166,8 @@ O desvio padrão mede o quanto os valores costumam se afastar da média, em méd
 2. O **desvio padrão** é a raiz quadrada da variância.
 
 Quanto **maior** o desvio padrão, mais "espalhados" estão os dados. Quanto **menor**, mais parecidos entre si eles são. Esse conceito é útil pra muita coisa prática: por exemplo, empresas usam o desvio padrão de gastos em cartão de crédito pra identificar uma compra "fora do padrão" — o que pode ser sinal de fraude.
+
+![Dois histogramas lado a lado com a mesma média de altura (~1,65m): o Grupo A tem desvio padrão baixo (pessoas parecidas) e o Grupo B tem desvio padrão alto (pessoas bem diferentes entre si)](images/05_desvio_padrao.png)
 
 ---
 
@@ -180,6 +190,8 @@ Se duas variáveis têm uma correlação forte, dá pra construir uma **regress�
 - **Interpolação**: estimar um valor **dentro** da faixa que você já observou. Exemplo: se você sabe a altura média de meninas aos 10 e aos 11 anos, dá pra estimar a altura de uma menina de 10 anos e 2 meses.
 - **Extrapolação**: estimar um valor **fora** da faixa observada. É mais arriscado, porque assume que o padrão vai continuar do mesmo jeito além do que foi medido — o que nem sempre é verdade. (Se você extrapolar demais a curva de crescimento de uma criança, pode "prever" um adulto de mais de 2 metros, o que geralmente não faz sentido.)
 
+![Gráfico de dispersão de idade x altura com uma reta de regressão em vermelho, destacando um ponto de interpolação (18 anos, dentro da faixa observada) e um ponto de extrapolação (30 anos, fora da faixa observada)](images/06_correlacao_regressao.png)
+
 Vamos aplicar isso de um jeito bem concreto no Capítulo 11: prever o custo de combustível de uma viagem futura com base no histórico de viagens anteriores.
 
 ---
@@ -200,6 +212,8 @@ Vamos aplicar a metodologia completa de análise de dados, que tem 6 passos:
 No notebook, faremos justamente isso: uma análise **descritiva** (médias, mínimo, máximo), uma análise **exploratória** (gráficos e correlação entre litros e distância), e vamos terminar estimando, por interpolação/extrapolação, quanto custaria uma viagem de uma distância específica — o mesmo raciocínio que qualquer família usa (mesmo sem saber o nome bonito) pra planejar uma viagem mais longa.
 
 Um detalhe interessante que vamos encontrar: o rendimento mínimo e máximo calculado a partir dos dados brutos fica bem distante do que um carro real faz (por exemplo, valores abaixo de 2 km/l ou acima de 40 km/l). Isso é sinal de **dado "sujo"** — provavelmente abastecimentos parciais, onde o tanque não foi completado — e mostra, na prática, por que o passo 5 da metodologia (analisar) às vezes obriga a gente a voltar pro passo 4 (coletar/organizar) antes de confiar nas conclusões.
+
+![Dois gráficos lado a lado: um de dispersão mostrando distância percorrida x litros consumidos (correlação moderada), e um gráfico de linha mostrando o valor pago por abastecimento ao longo de vários anos](images/07_estudo_de_caso_combustivel.png)
 
 ---
 
