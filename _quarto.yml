@@ -50,14 +50,12 @@ website:
       contents:
         - section: "Aulas"
           contents:
-            - text: "Aula 01 - Introdução, Recolha e Organização"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-01
-            - text: "Aula 02 - Tendência Central e Frequências"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-02
-            - text: "Aula 03 - Ordenação e Mediana"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-03
-            - text: "Aula 04 - Correlação e Projeções"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-04
+            - text: "Leia antes"
+              href: 02_estatistica/README.md
+            - text: "Material Teórico"
+              href: 02_estatistica/material_teorico.md
+            - text: "Prática"
+              href: 02_estatistica/curso_estatistica_guaiba.ipynb
 
     - title: "Módulo 3 - Visualização de Dados"
       style: docked
