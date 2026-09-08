@@ -48,18 +48,40 @@ website:
     - title: "Módulo 2 - Estatística e Análise de Dados"
       style: docked
       contents:
-        - section: "Aulas"
+        - section: "Capítulos"
           contents:
             - text: "Leia antes"
               href: 02_estatistica/leia-antes.md
-            - text: "Aula 01 - Introdução, Recolha e Organização"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-01
-            - text: "Aula 02 - Tendência Central e Frequências"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-02
-            - text: "Aula 03 - Ordenação e Mediana"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-03
-            - text: "Aula 04 - Correlação e Projeções"
-              href: 02_estatistica/Plano_de_aula.md#estatistica-aula-04
+            - text: "Capítulo 1 - O convite"
+              href: 02_estatistica/material_teorico.md#capítulo-1-o-convite
+            - text: "Capítulo 2 - Organizando o que a gente já sabe"
+              href: 02_estatistica/material_teorico.md#capítulo-2-organizando-o-que-a-gente-já-sabe
+            - text: "Capítulo 3 - Quantas vezes cada bebida apareceu? (Frequência)"
+              href: 02_estatistica/material_teorico.md#capítulo-3-quantas-vezes-cada-bebida-apareceu-frequência
+            - text: "Capítulo 4 - Chega mais um, e tudo muda"
+              href: 02_estatistica/material_teorico.md#capítulo-4-chega-mais-um-e-tudo-muda
+            - text: "Capítulo 5 - O quiosque não tem tudo"
+              href: 02_estatistica/material_teorico.md#capítulo-5-o-quiosque-não-tem-tudo
+            - text: "Capítulo 6 - Quem é mais alto, quem é mais baixo, e qual é o \"meio-termo\"?"
+              href: 02_estatistica/material_teorico.md#capítulo-6-quem-é-mais-alto-quem-é-mais-baixo-e-qual-é-o-meio-termo
+            - text: "Capítulo 7 - Vendo os dados em vez de só ler números"
+              href: 02_estatistica/material_teorico.md#capítulo-7-vendo-os-dados-em-vez-de-só-ler-números
+            - text: "Capítulo 8 - O quanto os dados \"variam\" (Desvio Padrão)"
+              href: 02_estatistica/material_teorico.md#capítulo-8-o-quanto-os-dados-variam-desvio-padrão
+            - text: "Capítulo 9 - Existe relação entre duas coisas? (Correlação)"
+              href: 02_estatistica/material_teorico.md#capítulo-9-existe-relação-entre-duas-coisas-correlação
+            - text: "Capítulo 10 - Prevendo valores que a gente não tem (Regressão, Interpolação e Extrapolação)"
+              href: 02_estatistica/material_teorico.md#capítulo-10-prevendo-valores-que-a-gente-não-tem-regressão-interpolação-e-extrapolação
+            - text: "Capítulo 11 - Estudo de caso real: quanto custa ir até o Guaíba de carro?"
+              href: 02_estatistica/material_teorico.md#capítulo-11-estudo-de-caso-real-quanto-custa-ir-até-o-guaíba-de-carro
+            - text: "Capítulo 12 - Análise qualitativa x quantitativa (recapitulando)"
+              href: 02_estatistica/material_teorico.md#capítulo-12-análise-qualitativa-x-quantitativa-recapitulando
+            - text: "Capítulo 13 - Seu desafio: aplique isso na sua vida"
+              href: 02_estatistica/material_teorico.md#capítulo-13-seu-desafio-aplique-isso-na-sua-vida
+        - section: "Para o professor"
+          contents:
+            - text: "Plano de Aula (guia do professor)"
+              href: 02_estatistica/Plano_de_aula.md
 
     - title: "Módulo 3 - Visualização de Dados"
       style: docked

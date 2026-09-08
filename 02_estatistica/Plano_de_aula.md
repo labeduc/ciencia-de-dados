@@ -2,6 +2,8 @@
 
 Este repositório contém o planeamento estruturado para o curso de **Estatística Básica e Análise de Dados**, focado na recolha, organização, cálculo descritivo e interpretação analítica de grandes volumes de informação utilizando folhas de cálculo.
 
+> 👩‍🏫 **Guia do professor.** Este documento é material de apoio para quem está lecionando o módulo: objetivos, conteúdos programáticos e metodologia de cada aula. Não é o material que os alunos acompanham — para isso, use o [`material_teorico.md`](material_teorico.md) (a história completa, com explicações) e o notebook `curso_estatistica_guaiba.ipynb`. Para o cronograma semanal do curso completo (todos os módulos), veja o [Plano de Aula geral](../PLANO_DE_AULA.md).
+
 ---
 
 ## 📅 Estrutura Geral do Curso
