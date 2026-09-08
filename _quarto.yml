@@ -54,8 +54,6 @@ website:
               href: 02_estatistica/README.md
             - text: "Material Teórico"
               href: 02_estatistica/material_teorico.md
-            - text: "Prática"
-              href: 02_estatistica/curso_estatistica_guaiba.ipynb
 
     - title: "Módulo 3 - Visualização de Dados"
       style: docked
