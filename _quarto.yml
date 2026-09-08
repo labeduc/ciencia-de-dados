@@ -50,6 +50,8 @@ website:
       contents:
         - section: "Aulas"
           contents:
+            - text: "Leia antes"
+              href: 02_estatistica/leia-antes.md
             - text: "Aula 01 - Introdução, Recolha e Organização"
               href: 02_estatistica/Plano_de_aula.md#estatistica-aula-01
             - text: "Aula 02 - Tendência Central e Frequências"

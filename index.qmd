@@ -37,7 +37,7 @@ Fundamentos da linguagem, tipos de dados, controle de fluxo, estruturas de dados
 
 Coleta, organização, frequências, médias, medianas, correlação e projeções em planilhas.
 
-[Começar →](02_estatistica/README.md){.btn .btn-primary .btn-sm}
+[Começar →](02_estatistica/leia-antes.md){.btn .btn-primary .btn-sm}
 :::
 :::
 :::
