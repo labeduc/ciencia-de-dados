@@ -12,6 +12,7 @@ Material para jovens do ensino médio que querem aprender estatística e anális
 | `dados/cafe.csv` | Base real de pesquisa com o tipo de café preferido por 43 pessoas. Usado nos capítulos de frequência e amostragem. |
 | `dados/combustivel.csv` | Histórico real de 65 abastecimentos de um carro, usado no estudo de caso de análise de dados (distância, litros, valor). |
 | `images/` | Diagramas e gráficos usados no `material_teorico.md` (população/amostra, frequência, medidas de posição, tipos de gráfico, desvio padrão, correlação/regressão e o estudo de caso do combustível). |
+| `sala-investigacao.html` | Jogo de revisão em equipes pra tocar ao vivo numa aula de revisão: glossário relâmpago, cálculos com dados reais, leitura de correlação em gráficos, interpolação/extrapolação e uma simulação de pesquisa eleitoral. Abra o arquivo no navegador e compartilhe a tela. |
 
 ## 🚀 Como abrir no Google Colab
 
