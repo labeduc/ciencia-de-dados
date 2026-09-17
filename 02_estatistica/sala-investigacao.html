@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jogo de revisão em equipes para a aula de Estatística e Análise de Dados — LabEduc.">
+<title>Sala de Investigação</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Karla:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#0e1420;
+  --surface:#1a2331;
+  --surface-2:#212c3d;
+  --surface-3:#283549;
+  --line:#2d3a4d;
+  --ink:#eaf1f7;
+  --ink-soft:#93a7bd;
+  --ink-faint:#5b6c81;
+  --accent:#f2c14e;
+  --accent-ink:#241a04;
+  --accent-2:#57c4e5;
+  --good:#6fcf97;
+  --bad:#ef6f6a;
+  --team-1:#f2c14e;
+  --team-2:#57c4e5;
+  --team-3:#e8558b;
+  --team-4:#9b8afb;
+  --radius-lg:22px;
+  --radius-md:14px;
+  --radius-sm:9px;
+  --font-display:'Bricolage Grotesque','Segoe UI',sans-serif;
+  --font-body:'Karla','Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(87,196,229,.055) 1px,transparent 1px) 0 0/34px 34px,
+    linear-gradient(90deg,rgba(87,196,229,.055) 1px,transparent 1px) 0 0/34px 34px,
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(242,193,78,.10), transparent 60%),
+    var(--bg);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:var(--font-display);text-wrap:balance;}
+.mono{font-family:var(--font-mono);}
+button{font-family:inherit;cursor:pointer;}
+::selection{background:var(--accent);color:var(--accent-ink);}
+@media (prefers-reduced-motion:no-preference){
+  .stage-in{animation:stageIn .38s cubic-bezier(.2,.7,.3,1) both;}
+}
+@keyframes stageIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+
+/* ---------- layout shells ---------- */
+#app{min-height:100vh;display:flex;flex-direction:column;}
+.center-screen{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 18px;}
+.wrap{width:100%;max-width:760px;}
+
+/* ---------- welcome ---------- */
+.case-stamp{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);border:1px solid rgba(242,193,78,.4);background:rgba(242,193,78,.08);
+  padding:6px 12px;border-radius:99px;
+}
+.welcome-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:44px 40px;text-align:center;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);
+}
+.welcome-title{font-size:clamp(30px,5vw,46px);font-weight:800;margin:18px 0 10px;line-height:1.05;}
+.welcome-sub{color:var(--ink-soft);font-size:16.5px;line-height:1.55;max-width:520px;margin:0 auto 26px;}
+.big-btn{
+  font-family:var(--font-display);font-weight:700;font-size:17px;color:var(--accent-ink);
+  background:var(--accent);border:none;padding:15px 30px;border-radius:14px;
+  box-shadow:0 10px 24px -8px rgba(242,193,78,.55);transition:transform .15s ease;
+}
+.big-btn:hover{transform:translateY(-2px);}
+.big-btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none;}
+.meta-row{display:flex;justify-content:center;gap:22px;margin-top:26px;color:var(--ink-faint);font-family:var(--font-mono);font-size:12.5px;flex-wrap:wrap;}
+.meta-row span{display:flex;align-items:center;gap:6px;}
+
+/* ---------- setup ---------- */
+.setup-title{font-size:26px;font-weight:800;margin:0 0 4px;}
+.setup-sub{color:var(--ink-soft);margin:0 0 22px;font-size:15px;}
+.team-row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:12px 14px;margin-bottom:10px;}
+.team-dot{width:16px;height:16px;border-radius:50%;flex:none;}
+.team-row input{
+  flex:1;background:transparent;border:none;outline:none;color:var(--ink);font-family:var(--font-display);
+  font-weight:700;font-size:16px;
+}
+.icon-btn{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-soft);width:32px;height:32px;border-radius:9px;font-size:16px;line-height:1;display:flex;align-items:center;justify-content:center;}
+.icon-btn:hover{color:var(--ink);}
+.setup-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+.rules-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px;margin-top:22px;}
+.rules-box h3{margin:0 0 10px;font-size:15px;color:var(--accent-2);}
+.rules-box ol{margin:0;padding-left:20px;color:var(--ink-soft);font-size:14.5px;line-height:1.75;}
+
+/* ---------- header / scoreboard ---------- */
+.header-bar{
+  position:sticky;top:0;z-index:20;background:rgba(14,20,32,.9);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.hb-brand{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.08em;white-space:nowrap;}
+.hb-progress{flex:1;min-width:160px;}
+.hb-progress-label{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-faint);margin-bottom:4px;}
+.hb-progress-track{height:5px;background:var(--surface-2);border-radius:99px;overflow:hidden;}
+.hb-progress-fill{height:100%;background:linear-gradient(90deg,var(--accent-2),var(--accent));border-radius:99px;transition:width .3s ease;}
+.scoreboard{display:flex;gap:8px;flex-wrap:wrap;}
+.score-chip{
+  display:flex;align-items:center;gap:7px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:99px;padding:5px 10px 5px 6px;font-size:13px;
+}
+.score-chip .dot{width:10px;height:10px;border-radius:50%;flex:none;}
+.score-chip .name{color:var(--ink-soft);max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.score-chip .num{font-family:var(--font-mono);font-weight:700;color:var(--ink);}
+.menu-btn{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-soft);border-radius:10px;padding:7px 11px;font-size:13px;}
+
+/* ---------- stage ---------- */
+.stage-outer{flex:1;display:flex;flex-direction:column;align-items:center;padding:26px 16px 120px;}
+.stage-card{
+  width:100%;max-width:840px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-lg);padding:34px 34px 30px;box-shadow:0 30px 60px -35px rgba(0,0,0,.65);
+}
+.badge-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+.round-badge{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-ink);background:var(--accent);padding:5px 10px;border-radius:7px;font-weight:700;
+}
+.points-badge{
+  font-family:var(--font-mono);font-size:11.5px;color:var(--accent-2);border:1px solid rgba(87,196,229,.4);
+  background:rgba(87,196,229,.08);padding:5px 10px;border-radius:7px;
+}
+.prompt{font-size:clamp(20px,3vw,27px);font-weight:700;line-height:1.32;margin:0 0 20px;font-family:var(--font-display);}
+.data-table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14.5px;}
+.data-table th,.data-table td{border:1px solid var(--line);padding:8px 12px;text-align:left;}
+.data-table th{background:var(--surface-2);font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--ink-soft);text-transform:uppercase;}
+.data-table td{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+.visual-area{margin:0 0 22px;display:flex;justify-content:center;}
+.visual-area svg{max-width:100%;height:auto;}
+.choices{display:grid;gap:10px;margin-bottom:6px;}
+.choice{
+  display:flex;align-items:center;gap:12px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:12px;padding:13px 16px;font-size:15.5px;transition:border-color .2s ease, background .2s ease;
+}
+.choice .letter{
+  font-family:var(--font-mono);font-weight:700;font-size:13px;color:var(--ink-faint);
+  width:26px;height:26px;border-radius:8px;background:var(--surface-3);display:flex;align-items:center;justify-content:center;flex:none;
+}
+.choice.correct{border-color:var(--good);background:rgba(111,207,151,.1);}
+.choice.correct .letter{background:var(--good);color:#0c2417;}
+.choice.correct::after{content:'✓ correta';margin-left:auto;font-family:var(--font-mono);font-size:12px;color:var(--good);}
+.choice.dim{opacity:.55;}
+.reveal-panel{
+  margin-top:18px;border-left:3px solid var(--accent);background:rgba(242,193,78,.07);
+  border-radius:0 12px 12px 0;padding:16px 18px;
+}
+.reveal-panel .rp-label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.reveal-panel .rp-body{font-size:15px;line-height:1.6;color:var(--ink);}
+.reveal-panel .rp-body b{color:var(--accent-2);}
+.who-got-it{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.who-got-it .wlabel{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-faint);align-self:center;margin-right:2px;}
+.wgi-btn{
+  display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface-3);
+  border-radius:99px;padding:6px 12px 6px 8px;font-size:13px;color:var(--ink);
+}
+.wgi-btn .dot{width:9px;height:9px;border-radius:50%;}
+.wgi-btn:hover{border-color:var(--accent-2);}
+
+/* ---------- round intro ---------- */
+.roundintro-num{font-family:var(--font-mono);color:var(--accent-2);font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.roundintro-title{font-size:clamp(26px,4vw,38px);font-weight:800;margin:0 0 12px;}
+.roundintro-tag{color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0 0 22px;max-width:520px;}
+
+/* ---------- bottom controls ---------- */
+.controls-bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(14,20,32,.92);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);padding:12px 16px;display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;
+}
+.nav-btn{
+  font-family:var(--font-display);font-weight:700;font-size:14.5px;border-radius:12px;padding:11px 18px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--ink);
+}
+.nav-btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);}
+.nav-btn:disabled{opacity:.35;}
+.timer-widget{display:flex;align-items:center;gap:8px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;padding:6px 12px 6px 8px;}
+.timer-widget .tnum{font-family:var(--font-mono);font-weight:700;font-size:14px;min-width:34px;text-align:center;}
+.timer-widget button{background:none;border:none;color:var(--ink-soft);font-size:13px;padding:2px 4px;}
+.timer-widget button:hover{color:var(--ink);}
+
+/* ---------- round menu overlay ---------- */
+.overlay{position:fixed;inset:0;background:rgba(6,9,15,.72);backdrop-filter:blur(2px);z-index:40;display:flex;align-items:center;justify-content:center;padding:20px;}
+.overlay-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);max-width:460px;width:100%;max-height:80vh;overflow:auto;padding:22px;}
+.overlay-panel h3{margin:0 0 14px;font-size:18px;}
+.jump-item{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;border:1px solid var(--line);margin-bottom:8px;background:var(--surface-2);}
+.jump-item small{color:var(--ink-faint);font-family:var(--font-mono);}
+.jump-item button{background:var(--surface-3);border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:7px 12px;font-size:13px;}
+
+/* ---------- closing ---------- */
+.podium{display:flex;align-items:flex-end;gap:14px;justify-content:center;margin:26px 0 10px;min-height:170px;}
+.podium-col{display:flex;flex-direction:column;align-items:center;gap:8px;width:110px;}
+.podium-bar{width:100%;border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-family:var(--font-mono);font-weight:700;color:#0c2417;}
+.podium-name{font-size:13px;color:var(--ink-soft);text-align:center;}
+
+.glossary-grid{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px;}
+.gterm{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:11px 14px;}
+.gterm b{color:var(--accent-2);font-family:var(--font-display);}
+.gterm span{color:var(--ink-soft);font-size:14px;display:block;margin-top:3px;line-height:1.5;}
+
+.foot-link{color:var(--ink-faint);font-family:var(--font-mono);font-size:12px;}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* ======================= CONTENT ======================= */
+const SCATTER_POS=[[1,2.5],[2,3.5],[2.5,4],[3,4.5],[4,5.5],[4.5,6],[5,6.5],[6,7.5],[7,8.5],[7.5,9]];
+const SCATTER_NEG=[[1,9],[2,8.5],[2.5,8],[3,7.5],[4,7],[5,6],[6,5.5],[7,4.5],[8,4],[9,3]];
+const SCATTER_NONE=[[1,6],[2,3],[3,8],[4,5],[5,2],[5.5,7],[6,4],[7,9],[8,3],[9,6]];
+const ROUNDS = [
+{
+  id:'r1', title:'Glossário Relâmpago', tagline:'Definições básicas de estatística — resposta rápida, sem pensar demais!', points:10,
+  slides:[
+    {prompt:'O que é POPULAÇÃO em uma pesquisa?', choices:[
+      {t:'A parte representativa do grupo estudado'},
+      {t:'O conjunto de elementos sob estudo da pesquisa', c:true},
+      {t:'O valor mais frequente da amostra'},
+      {t:'A diferença entre o maior e o menor valor'}],
+      reveal:'<b>População</b> é o conjunto de elementos sob estudo da pesquisa — o grupo inteiro que queremos entender.'},
+    {prompt:'E o que é a AMOSTRA?', choices:[
+      {t:'Parte representativa da população', c:true},
+      {t:'O total de dados já coletados'},
+      {t:'Um erro de medição'},
+      {t:'A média de todos os dados'}],
+      reveal:'<b>Amostra</b> é a parte representativa da população — o pedaço que estudamos porque não dá pra estudar todo mundo.'},
+    {prompt:'MODA é...', choices:[
+      {t:'A média dos valores'},
+      {t:'O elemento de maior frequência', c:true},
+      {t:'O valor do meio quando ordenamos os dados'},
+      {t:'A raiz quadrada da variância'}],
+      reveal:'<b>Moda</b> é o elemento de maior frequência — o que mais se repete na série.'},
+    {prompt:'Qual a diferença entre FREQUÊNCIA ABSOLUTA e FREQUÊNCIA RELATIVA?', choices:[
+      {t:'Não existe diferença, são sinônimos'},
+      {t:'Absoluta é a contagem bruta; relativa é o % do total', c:true},
+      {t:'Relativa é sempre maior que a absoluta'},
+      {t:'Absoluta só existe em gráfico de pizza'}],
+      reveal:'<b>Frequência absoluta</b> = número de vezes que o valor aparece. <b>Frequência relativa</b> = essa contagem dividida pelo total, em %.'},
+    {prompt:'MÍNIMO e MÁXIMO servem para...', choices:[
+      {t:'Calcular a moda'},
+      {t:'Mostrar os limites (menor e maior valor) da série', c:true},
+      {t:'Ordenar a tabela sozinhos'},
+      {t:'Achar a mediana automaticamente'}],
+      reveal:'<b>Mínimo</b> é o menor valor da série e <b>máximo</b> é o maior — os dois limites dos dados.'},
+    {prompt:'Numa TABELA, o que é uma SÉRIE?', choices:[
+      {t:'Uma linha (observação)'},
+      {t:'Uma coluna — a variável ou categoria de informação', c:true},
+      {t:'O total de linhas da tabela'},
+      {t:'A média de uma coluna'}],
+      reveal:'<b>Série</b> é a coluna de uma tabela: a variável ou categoria de informação. <b>Observação</b> seria a linha — os dados de um elemento da amostra.'}
+  ]
+},
+{
+  id:'r3', title:'Mão na Massa: Estatística Real', tagline:'Usando a tabela de café e a tabela de alturas da turminha (Mônica e cia).', points:15,
+  slides:[
+    {prompt:'Na tabela de tipos de café, qual é a MODA?',
+      table:{head:['Tipo de café','Frequência'],rows:[['Café sem açúcar','3'],['Café com açúcar','2'],['Café com leite','1'],['Cappuccino','0'],['Mocaccino','0']]},
+      reveal:'A moda é <b>"Café sem açúcar"</b> — é o valor de maior frequência (3 pessoas escolheram).'},
+    {prompt:'Qual é a FREQUÊNCIA RELATIVA de quem pediu "café com açúcar"? (total de 6 respostas)',
+      table:{head:['Tipo de café','Frequência'],rows:[['Café sem açúcar','3'],['Café com açúcar','2'],['Café com leite','1'],['Cappuccino','0'],['Mocaccino','0']]},
+      reveal:'2 em cada 6 → 2/6 = <b>≈ 33,3%</b>. É a frequência absoluta (2) dividida pelo somatório das frequências (6).'},
+    {prompt:'Aqui está uma amostra de 5 alturas do time da turminha. Ordene e ache a MEDIANA.',
+      table:{head:['Jogador','Altura (m)'],rows:[['Titi','1,51'],['Franjinha','1,53'],['Cebolinha','1,61'],['Humberto','1,66'],['Marina','1,83']]},
+      reveal:'Já estão em ordem crescente — o valor do meio (3º de 5) é <b>1,66m (Humberto)</b>.'},
+    {prompt:'Com os mesmos 5 valores, qual é a MÉDIA das alturas?',
+      table:{head:['Jogador','Altura (m)'],rows:[['Titi','1,51'],['Franjinha','1,53'],['Cebolinha','1,61'],['Humberto','1,66'],['Marina','1,83']]},
+      reveal:'(1,51 + 1,53 + 1,61 + 1,66 + 1,83) ÷ 5 = 8,14 ÷ 5 = <b>1,628m</b>. Soma de todos os valores dividida pela quantidade de elementos.'},
+    {prompt:'E o MÍNIMO e o MÁXIMO dessa amostra?',
+      table:{head:['Jogador','Altura (m)'],rows:[['Titi','1,51'],['Franjinha','1,53'],['Cebolinha','1,61'],['Humberto','1,66'],['Marina','1,83']]},
+      reveal:'Mínimo: <b>1,51m</b> (Titi). Máximo: <b>1,83m</b> (Marina) — e coincidência: são os mesmos limites da tabela completa de 29 jogadores que vimos em aula!'}
+  ]
+},
+{
+  id:'r4', title:'Desvio Padrão', tagline:'Lembra da figura dos Simpsons com a média das alturas? Vamos pensar de novo nisso.', points:15,
+  slides:[
+    {prompt:'Duas turmas fizeram a mesma prova e tiraram a MESMA média. Olhando a distribuição das notas, qual turma tem maior DESVIO PADRÃO?',
+      visual:svgSpread(),
+      choices:[{t:'Turma A (notas bem próximas umas das outras)'},{t:'Turma B (notas bem espalhadas)',c:true}],
+      reveal:'<b>Turma B</b>. O desvio padrão mede o quanto os valores se afastam da média — quanto mais espalhados os pontos, maior o desvio, mesmo com a média igual.'},
+    {prompt:'O desvio padrão é calculado como...',
+      choices:[{t:'A soma de todos os valores'},{t:'A raiz quadrada da variância',c:true},{t:'O valor mais frequente da série'},{t:'A diferença entre máximo e mínimo'}],
+      reveal:'Desvio padrão = <b>raiz quadrada da variância</b>. E a variância é a soma do quadrado das diferenças (valor − média), dividida pelo número de elementos.'},
+    {prompt:'Em aprendizado de máquina, valores muito distantes do padrão (longe da média) costumam indicar...',
+      choices:[{t:'Só erro de digitação, sempre'},{t:'Possíveis fraudes ou situações especiais',c:true},{t:'A nova moda dos dados'},{t:'Nada — são sempre ignorados'}],
+      reveal:'Itens fora do padrão (outliers) podem indicar <b>fraudes ou situações especiais</b> — é um dos usos práticos do desvio padrão em análise de dados.'}
+  ]
+},
+{
+  id:'r5', title:'Correlação ou Coincidência?', tagline:'Primeiro no olho, depois na lógica: leia o gráfico, depois pense se é causa e efeito.', points:10,
+  slides:[
+    {prompt:'Olhando esse gráfico de dispersão (Horas de estudo × Nota na prova), existe correlação visível? De que tipo?',
+      visual:svgScatter(SCATTER_POS,'horas de estudo','nota na prova'),
+      choices:[{t:'Sim, positiva — sobe uma, sobe a outra',c:true},{t:'Sim, negativa — sobe uma, desce a outra'},{t:'Não há correlação visível'}],
+      reveal:'<b>Correlação positiva</b>: os pontos sobem juntos da esquerda pra direita — quanto mais estudo, maior a nota, de forma bem visível no gráfico.'},
+    {prompt:'E nesse gráfico (Tempo de tela antes de dormir × Horas de sono)? Existe correlação visível?',
+      visual:svgScatter(SCATTER_NEG,'tempo de tela antes de dormir','horas de sono'),
+      choices:[{t:'Sim, positiva — sobe uma, sobe a outra'},{t:'Sim, negativa — sobe uma, desce a outra',c:true},{t:'Não há correlação visível'}],
+      reveal:'<b>Correlação negativa</b>: os pontos descem da esquerda pra direita — quanto mais tempo de tela, menos horas de sono.'},
+    {prompt:'E aqui (Número do armário × Nota na prova)? Existe correlação visível?',
+      visual:svgScatter(SCATTER_NONE,'número do armário','nota na prova'),
+      choices:[{t:'Sim, positiva'},{t:'Sim, negativa'},{t:'Não há correlação visível — os pontos estão espalhados sem padrão',c:true}],
+      reveal:'<b>Sem correlação</b>: os pontos formam uma nuvem sem direção nenhuma — não dá pra prever a nota pelo número do armário (ainda bem!).'},
+    {prompt:'"Km rodados" × "Litros de combustível gastos" (dados do Uno Way). Existe correlação?',
+      choices:[{t:'Sim — forte e positiva: mais km, mais litros',c:true},{t:'Não existe nenhuma relação'},{t:'Sim, mas negativa'},{t:'Impossível saber sem gráfico'}],
+      reveal:'<b>Correlação forte e positiva</b>: faz sentido, quanto mais o carro roda, mais combustível ele consome.'},
+    {prompt:'"Idade" × "Altura" em crianças de 10 a 14 anos, como na nossa tabela de crescimento. Existe correlação?',
+      choices:[{t:'Sim — positiva, elas crescem junto com a idade',c:true},{t:'Não, altura é aleatória'},{t:'Sim, mas negativa'},{t:'Só depois dos 18 anos'}],
+      reveal:'<b>Correlação positiva</b> — é exatamente essa relação que usamos depois para interpolar e extrapolar alturas.'},
+    {prompt:'"Venda de sorvete" × "Número de afogamentos" numa cidade, mês a mês. Existe correlação? E é causa e efeito?',
+      choices:[{t:'Não há nenhuma correlação'},{t:'Há correlação, mas NÃO é causa e efeito',c:true},{t:'Sim, sorvete causa afogamento'},{t:'Sim, afogamento causa venda de sorvete'}],
+      reveal:'Clássico exemplo de <b>correlação sem causalidade</b>: as duas coisas sobem no verão por causa de uma terceira variável (o calor) — não uma causando a outra.'},
+    {prompt:'"Tamanho do calçado" × "Nota na prova de matemática" de uma turma. Existe correlação real?',
+      choices:[{t:'Sim, pé grande = nota melhor'},{t:'Não há correlação real entre essas variáveis',c:true},{t:'Só para meninas'},{t:'Só para meninos'}],
+      reveal:'<b>Sem correlação real</b> — é um ótimo exemplo de duas variáveis que não têm relação nenhuma entre si, mesmo que por acaso pareçam combinar em uma amostra pequena.'},
+    {prompt:'"Horas de treino do time" × "Gols marcados nos jogos" (nosso time da turminha). Dá pra afirmar correlação de cara?',
+      choices:[{t:'Sim, sem nem olhar os dados'},{t:'Pode haver correlação, mas só afirmamos depois de checar os dados',c:true},{t:'Nunca há correlação em esportes'},{t:'Só a moda importa aqui'}],
+      reveal:'Boa prática de análise: <b>suspeitar é ok, afirmar exige dados</b>. É pra isso que existe a etapa de "definir como medir" antes de tirar conclusões.'}
+  ]
+},
+{
+  id:'r6', title:'Interpola ou Extrapola?', tagline:'A tabela de idade × altura que usamos em aula, de novo em ação.', points:15,
+  slides:[
+    {prompt:'Uma menina tem 10 anos e 2 meses. Para estimar a altura dela, olhando a tabela, usamos...',
+      table:{head:['Idade','Altura (m)'],rows:[['10','1,39'],['11','1,46'],['12','1,51'],['13','1,56'],['14','1,60']]},
+      choices:[{t:'Interpolação — o valor está dentro dos limites da amostra',c:true},{t:'Extrapolação — o valor está fora dos limites'},{t:'Nenhuma das duas, é impossível estimar'},{t:'Regressão linear apenas'}],
+      reveal:'<b>Interpolação</b>: 10 anos e 2 meses está dentro da faixa conhecida (10 a 14 anos). O resultado estimado é de aproximadamente <b>1,40m</b>.'},
+    {prompt:'E para estimar a altura de uma criança de 9 anos, fora da tabela?',
+      table:{head:['Idade','Altura (m)'],rows:[['10','1,39'],['11','1,46'],['12','1,51'],['13','1,56'],['14','1,60']]},
+      choices:[{t:'Interpolação, porque é só 1 ano de diferença'},{t:'Extrapolação — o valor está além dos limites da amostra',c:true},{t:'Nenhum cálculo é possível'},{t:'É a moda dos dados'}],
+      reveal:'<b>Extrapolação</b>: assumimos que a curva se mantém fora da amostra. O resultado dá cerca de <b>1,348m</b> — mas o valor pode não ser confiável.'},
+    {prompt:'Por que a extrapolação pode ser perigosa?',
+      choices:[{t:'Porque assume que o padrão continua fora da amostra e pode gerar valores absurdos',c:true},{t:'Porque é matematicamente impossível de calcular'},{t:'Porque só funciona com números negativos'},{t:'Ela nunca é perigosa'}],
+      reveal:'Extrapolar demais pode dar resultado sem sentido: seguindo a mesma curva, um adulto de <b>24 anos "teria" 2,128m de altura</b>! Por isso extrapolação exige cuidado.'}
+  ]
+},
+{
+  id:'r6b', title:'Simulação: Pesquisa Eleitoral', tagline:'Um instituto fictício ouviu 1.200 eleitores por 4 semanas. Junte amostra, correlação e extrapolação pra ler o resultado.', points:15,
+  slides:[
+    {prompt:'Olhando a pesquisa das últimas 4 semanas, quem está em primeiro lugar HOJE (semana 4)?',
+      visual:svgElectionLine(),
+      choices:[{t:'Candidato Âmbar'},{t:'Candidata Ciano',c:true},{t:'Candidato Magenta'},{t:'Está empatado'}],
+      reveal:'<b>Candidata Ciano</b> lidera na semana 4 (41%), depois de ultrapassar Âmbar entre a semana 2 e a 3.'},
+    {prompt:'Esse instituto ouviu 1.200 pessoas, num estado com 3 milhões de eleitores. Isso é POPULAÇÃO ou AMOSTRA?',
+      choices:[{t:'População — ouviram todo mundo que importa'},{t:'Amostra — uma parte representativa, por isso existe margem de erro',c:true}],
+      reveal:'<b>Amostra</b>. É por isso que toda pesquisa eleitoral divulga uma <b>margem de erro</b> — os 1.200 representam os 3 milhões, mas não são os 3 milhões.'},
+    {prompt:'Repare: enquanto Ciano sobe, Âmbar cai quase na mesma proporção, semana a semana. Existe correlação visível entre as duas curvas? De que tipo?',
+      visual:svgElectionLine(),
+      choices:[{t:'Positiva — os dois sobem e descem juntos'},{t:'Negativa — um sobe enquanto o outro desce',c:true},{t:'Nenhuma correlação visível'}],
+      reveal:'<b>Correlação negativa</b> entre as duas curvas — sugere votos "migrando" de um candidato pro outro. Mas cuidado: correlação mostra o padrão, não prova sozinha o motivo.'},
+    {prompt:'Seria seguro EXTRAPOLAR essa tendência de 4 semanas e afirmar que Ciano já venceu a eleição, que ainda é daqui a 2 meses?',
+      choices:[{t:'Sim, a tendência das últimas semanas garante o resultado'},{t:'Não — extrapolar tão além do período pesquisado é arriscado',c:true}],
+      reveal:'<b>Não é seguro extrapolar tão longe</b>: assim como a tabela de altura "previa" um adulto de 2,128m, uma tendência de 4 semanas pode não se manter por mais 8. Muita coisa pode mudar até lá.'}
+  ]
+},
+{
+  id:'r7', title:'Os 4 Tipos de Análise', tagline:'Descritiva, exploratória, preditiva e prescritiva — cada uma engloba a anterior.', points:10,
+  slides:[
+    {prompt:'"Calcular a média de gols do time na temporada." Que tipo de análise é essa?',
+      choices:[{t:'Análise Descritiva',c:true},{t:'Análise Exploratória'},{t:'Análise Preditiva'},{t:'Análise Prescritiva'}],
+      reveal:'<b>Descritiva</b>: a mais básica — descreve os dados com soma, média, mínimo, máximo e frequência.'},
+    {prompt:'"Verificar se existe correlação entre minutos de treino e gols marcados." Que tipo de análise é essa?',
+      choices:[{t:'Análise Descritiva'},{t:'Análise Exploratória',c:true},{t:'Análise Preditiva'},{t:'Análise Prescritiva'}],
+      reveal:'<b>Exploratória</b>: explora correlações e regressões entre variáveis, de forma matemática ou gráfica.'},
+    {prompt:'"Usar o histórico de jogos para prever o resultado do próximo jogo." Que tipo de análise é essa?',
+      choices:[{t:'Análise Descritiva'},{t:'Análise Exploratória'},{t:'Análise Preditiva',c:true},{t:'Análise Prescritiva'}],
+      reveal:'<b>Preditiva</b>: usa uma base histórica para prever o que deve acontecer — como a previsão do tempo.'},
+    {prompt:'"Decidir, com base em todos os dados, se o time deve trocar de técnico." Que tipo de análise é essa?',
+      choices:[{t:'Análise Descritiva'},{t:'Análise Exploratória'},{t:'Análise Preditiva'},{t:'Análise Prescritiva',c:true}],
+      reveal:'<b>Prescritiva</b>: usa todas as análises anteriores para prescrever uma solução — como em sistemas de crédito.'}
+  ]
+},
+{
+  id:'r8', title:'Caso Final: Uno Way & COVID', tagline:'Rodada bônus valendo pontos em dobro — juntando tudo que vimos hoje.', points:20,
+  slides:[
+    {prompt:'O Uno Way percorreu 9.253,8 km e consumiu 763,87 litros no ano. Qual foi a média de Km/l?',
+      reveal:'9.253,8 ÷ 763,87 ≈ <b>12,12 km/l</b> — a mesma conta de sempre: total percorrido dividido pelo total consumido.'},
+    {prompt:'Se um mês aparecesse com Km/l muito fora do padrão (tipo 25 km/l, quando a média é 12), o que isso pode indicar?',
+      choices:[{t:'Um erro de medição, mudança de rota ou evento fora do padrão',c:true},{t:'Que a média está errada'},{t:'Que o carro virou elétrico'},{t:'Nada, é só sorte'}],
+      reveal:'Um valor tão distante da média (fora do desvio padrão esperado) pede investigação — pode ser erro de registro ou algo real e interessante de explicar.'},
+    {prompt:'Por que os gráficos de COVID-19 às vezes usam escala LOGARÍTMICA?',
+      choices:[{t:'Só para deixar o gráfico mais bonito'},{t:'Ajuda a ver quando o crescimento está desacelerando — linha reta no log = sem casos novos',c:true},{t:'Porque números grandes não cabem na tela'},{t:'Para esconder os dados reais'}],
+      reveal:'Na escala log, uma <b>linha constante</b> indica que não há mais casos novos surgindo — fica mais fácil enxergar mudança de tendência do que na escala normal.'},
+    {prompt:'Bônus final: quais são as 6 ETAPAS da metodologia de análise de dados?',
+      reveal:'1) <b>Definir perguntas</b> · 2) <b>Definir o que medir</b> · 3) <b>Definir como medir</b> · 4) <b>Coletar dados</b> · 5) <b>Analisar dados</b> (qualitativa ou quantitativa) · 6) <b>Interpretar resultados</b>.'}
+  ]
+}
+];
+
+const GLOSSARY = [
+ ['Estatística','Ramo da matemática que trata da coleta, análise, interpretação e apresentação de dados numéricos.'],
+ ['População','Conjunto de elementos sob estudo da pesquisa.'],
+ ['Amostra','Parte representativa da população.'],
+ ['Variável','Item/categoria que está sendo analisada.'],
+ ['Série','Coluna de uma tabela — a variável ou categoria de informação.'],
+ ['Observação','Linha de uma tabela — os dados de um elemento da amostra.'],
+ ['Frequência absoluta','Número de vezes que o valor da variável é citado.'],
+ ['Frequência relativa','Frequência absoluta dividida pelo somatório das frequências, em %.'],
+ ['Frequência acumulada','Agrupamento de frequências que se relacionam.'],
+ ['Moda','Elemento de maior frequência.'],
+ ['Média','Soma dos valores dividida pelo número de elementos.'],
+ ['Mediana','Valor do meio da série ordenada.'],
+ ['Mínimo / Máximo','Menor e maior valor da série.'],
+ ['Desvio padrão','Raiz quadrada da variância — indica o quanto os dados se afastam da média.'],
+ ['Variância','Soma do quadrado das diferenças, dividida pelo número de elementos.'],
+ ['Correlação','Relação que existe entre variáveis (nem sempre é causa e efeito!).'],
+ ['Regressão linear','Equação que descreve o relacionamento entre variáveis.'],
+ ['Interpolação','Valor estimado dentro dos limites da amostra.'],
+ ['Extrapolação','Valor estimado além dos limites da amostra.'],
+ ['Análise quantitativa','Baseada em números e cálculos.'],
+ ['Análise qualitativa','Baseada em opiniões, textos e categorização.'],
+ ['Análise descritiva → exploratória → preditiva → prescritiva','Do "o que aconteceu" ao "o que fazer" — cada nível engloba o anterior.'],
+ ['Gráficos','Pontos (dotplot), Pizza/Setor, Barras, Colunas e Linha — cada um serve melhor pra um tipo de leitura.']
+];
+
+/* ======================= SVG HELPERS ======================= */
+function svgScatter(points,xLabel,yLabel){
+  const W=340,H=200,padL=16,padB=34,padT=14,padR=16;
+  const px=v=>padL+(v/10)*(W-padL-padR);
+  const py=v=>(H-padB)-(v/10)*(H-padT-padB);
+  const dots=points.map(p=>`<circle cx="${px(p[0]).toFixed(1)}" cy="${py(p[1]).toFixed(1)}" r="7" fill="var(--accent-2)" stroke="var(--surface)" stroke-width="2"/>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" width="340">
+    <line x1="${padL}" y1="${H-padB}" x2="${W-padR}" y2="${H-padB}" stroke="var(--line)"/>
+    <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${H-padB}" stroke="var(--line)"/>
+    ${dots}
+    <text x="${(W)/2}" y="${H-8}" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--ink-faint)">${xLabel} →</text>
+    <text x="${padL}" y="${padT-2}" font-family="var(--font-mono)" font-size="11" fill="var(--ink-faint)">↑ ${yLabel}</text>
+  </svg>`;
+}
+function svgElectionLine(){
+  const xs=[30,130,230,310];
+  const ambar=[69.2,80.4,97.2,114];
+  const ciano=[108.4,97.2,74.8,52.4];
+  const magenta=[147.6,147.6,153.2,158.8];
+  function poly(ys,color){
+    const pts=xs.map((x,i)=>x+','+ys[i].toFixed(1)).join(' ');
+    const dots=xs.map((x,i)=>`<circle cx="${x}" cy="${ys[i].toFixed(1)}" r="5.5" fill="${color}" stroke="var(--surface)" stroke-width="1.5"/>`).join('');
+    return `<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="3"/>${dots}`;
+  }
+  const weekLabels=xs.map((x,i)=>`<text x="${x}" y="188" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--ink-faint)">Sem ${i+1}</text>`).join('');
+  return `<svg viewBox="0 0 340 200" width="340">
+    <line x1="20" y1="170" x2="330" y2="170" stroke="var(--line)"/>
+    ${poly(ambar,'var(--team-1)')}
+    ${poly(ciano,'var(--team-2)')}
+    ${poly(magenta,'var(--team-3)')}
+    ${weekLabels}
+    <g font-family="var(--font-mono)" font-size="11">
+      <circle cx="34" cy="14" r="5" fill="var(--team-1)"/><text x="44" y="18" fill="var(--ink-soft)">Âmbar</text>
+      <circle cx="130" cy="14" r="5" fill="var(--team-2)"/><text x="140" y="18" fill="var(--ink-soft)">Ciano</text>
+      <circle cx="220" cy="14" r="5" fill="var(--team-3)"/><text x="230" y="18" fill="var(--ink-soft)">Magenta</text>
+    </g>
+  </svg>`;
+}
+function svgSpread(){
+  const jitter=[-13,10,-7,13,-10];
+  function row(vals,label,y){
+    const x=v=>10+v*30;
+    const dots=vals.map((v,i)=>`<circle cx="${x(v)}" cy="${y+jitter[i]}" r="7" fill="var(--accent-2)" stroke="var(--surface)" stroke-width="2"/>`).join('');
+    const mean=vals.reduce((a,b)=>a+b,0)/vals.length;
+    return `<text x="10" y="${y-28}" font-family="var(--font-mono)" font-size="12" fill="var(--ink-soft)">${label}</text>
+      <line x1="10" y1="${y}" x2="310" y2="${y}" stroke="var(--line)"/>
+      <line x1="${x(mean)}" y1="${y-24}" x2="${x(mean)}" y2="${y+24}" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3,3"/>
+      ${dots}`;
+  }
+  return `<svg viewBox="0 0 320 160" width="320">
+    ${row([4.8,4.9,5.0,5.1,5.2],'Turma A',44)}
+    ${row([2.0,4.0,5.0,6.0,8.0],'Turma B',128)}
+  </svg>`;
+}
+
+/* ======================= STATE ======================= */
+let teams=[{name:'Equipe Âmbar',color:'var(--team-1)',score:0},{name:'Equipe Ciano',color:'var(--team-2)',score:0}];
+let phase='welcome';
+let flow=[];
+let pos=0;
+let revealed=false;
+let menuOpen=false;
+let timer={remaining:45,total:45,running:false,handle:null};
+
+function buildFlow(){
+  flow=[];
+  ROUNDS.forEach((r,ri)=>{
+    flow.push({kind:'roundintro',ri});
+    r.slides.forEach((s,si)=>flow.push({kind:'question',ri,si}));
+  });
+  flow.push({kind:'closing'});
+}
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+/* ======================= RENDER ======================= */
+function render(){
+  const app=document.getElementById('app');
+  if(phase==='welcome') return renderWelcome(app);
+  if(phase==='setup') return renderSetup(app);
+  if(phase==='play') return renderPlay(app);
+}
+
+function renderWelcome(app){
+  app.innerHTML=`
+  <div class="center-screen">
+    <div class="wrap">
+      <div class="welcome-card stage-in">
+        <span class="case-stamp">🔎 caso nº 05 · revisão geral</span>
+        <h1 class="welcome-title">Sala de Investigação</h1>
+        <p class="welcome-sub">Chegou a hora de revisar tudo o que a turma investigou até aqui: população, amostra, médias, gráficos, correlação e os grandes casos de dados reais. Formem equipes e resolvam os casos juntos!</p>
+        <button class="big-btn" onclick="goSetup()">Montar as equipes →</button>
+        <div class="meta-row">
+          <span>🕐 ~60 minutos</span>
+          <span>🧩 8 rodadas</span>
+          <span>👥 2 a 4 equipes</span>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderSetup(app){
+  const rows=teams.map((t,i)=>`
+    <div class="team-row">
+      <span class="team-dot" style="background:${t.color}"></span>
+      <input value="${esc(t.name)}" oninput="renameTeam(${i},this.value)" maxlength="24"/>
+      ${teams.length>2?`<button class="icon-btn" title="Remover" onclick="removeTeam(${i})">✕</button>`:''}
+    </div>`).join('');
+  app.innerHTML=`
+  <div class="center-screen">
+    <div class="wrap">
+      <div class="welcome-card stage-in" style="text-align:left;">
+        <p class="setup-title">Quem vai investigar hoje?</p>
+        <p class="setup-sub">Dê um nome pra cada equipe (2 a 4). Os pontos são somados ao longo das rodadas — você decide quem acertou em cada revelação.</p>
+        ${rows}
+        <div class="setup-actions">
+          ${teams.length<4?`<button class="big-btn ghost" onclick="addTeam()">+ Adicionar equipe</button>`:''}
+        </div>
+        <div class="rules-box">
+          <h3>Como conduzir</h3>
+          <ol>
+            <li>Leia a pergunta em voz alta / deixe a turma ler na tela.</li>
+            <li>Peça respostas por chat, voz ou "mão levantada" — sem clique individual, é você quem revela.</li>
+            <li>Clique em <b>Revelar resposta</b> e dê os pontos pra quem acertou.</li>
+            <li>Use <b>Próximo</b> pra avançar — e o menu de rodadas se precisar pular algo.</li>
+          </ol>
+        </div>
+        <div class="setup-actions" style="margin-top:20px;">
+          <button class="big-btn ghost" onclick="goWelcome()">← Voltar</button>
+          <button class="big-btn" onclick="startGame()">Começar investigação →</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderScoreboard(){
+  return teams.map((t,i)=>`
+    <div class="score-chip">
+      <span class="dot" style="background:${t.color}"></span>
+      <span class="name">${esc(t.name)}</span>
+      <span class="num">${t.score}</span>
+    </div>`).join('');
+}
+
+function renderHeader(progressPct,label){
+  return `
+  <div class="header-bar">
+    <div class="hb-brand">🔎 SALA DE INVESTIGAÇÃO</div>
+    <div class="hb-progress">
+      <div class="hb-progress-label">${label}</div>
+      <div class="hb-progress-track"><div class="hb-progress-fill" style="width:${progressPct}%"></div></div>
+    </div>
+    <div class="scoreboard">${renderScoreboard()}</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Rodadas</button>
+  </div>`;
+}
+
+function renderControls(opts){
+  const {showPrev,showReveal,showNext,nextLabel}=opts;
+  return `
+  <div class="controls-bar">
+    <button class="nav-btn" onclick="prevSlide()" ${showPrev?'':'disabled'}>← Anterior</button>
+    ${showReveal?`<button class="nav-btn primary" onclick="toggleReveal()">${revealed?'Ocultar':'Revelar resposta'}</button>`:''}
+    <div class="timer-widget">
+      <button onclick="timerAdjust(-15)">−15s</button>
+      <span class="tnum mono">${String(Math.floor(timer.remaining/60)).padStart(1,'0')}:${String(timer.remaining%60).padStart(2,'0')}</span>
+      <button onclick="timerToggle()">${timer.running?'⏸':'▶'}</button>
+      <button onclick="timerReset()">↺</button>
+      <button onclick="timerAdjust(15)">+15s</button>
+    </div>
+    ${showNext?`<button class="nav-btn primary" onclick="nextSlide()">${nextLabel||'Próximo →'}</button>`:''}
+  </div>`;
+}
+
+function renderMenuOverlay(){
+  if(!menuOpen) return '';
+  const items=ROUNDS.map((r,ri)=>{
+    const idx=flow.findIndex(f=>f.kind==='roundintro'&&f.ri===ri);
+    return `<div class="jump-item">
+      <div><b>${r.title}</b><br><small>${r.slides.length} cartões · ${r.points} pts cada</small></div>
+      <button onclick="jumpTo(${idx})">Ir →</button>
+    </div>`;
+  }).join('');
+  return `<div class="overlay" onclick="if(event.target===this)toggleMenu()">
+    <div class="overlay-panel">
+      <h3>Pular para uma rodada</h3>
+      ${items}
+      <div class="jump-item"><div><b>Encerramento</b><br><small>Placar final + glossário</small></div><button onclick="jumpTo(${flow.length-1})">Ir →</button></div>
+    </div>
+  </div>`;
+}
+
+function renderPlay(app){
+  const f=flow[pos];
+  const progressPct=Math.round((pos/(flow.length-1))*100);
+
+  if(f.kind==='roundintro'){
+    const r=ROUNDS[f.ri];
+    app.innerHTML=`
+      ${renderHeader(progressPct,`Rodada ${f.ri+1} de ${ROUNDS.length}`)}
+      <div class="stage-outer">
+        <div class="stage-card stage-in" style="text-align:center;">
+          <div class="roundintro-num">Rodada ${f.ri+1} de ${ROUNDS.length}</div>
+          <h2 class="roundintro-title">${esc(r.title)}</h2>
+          <p class="roundintro-tag" style="margin-left:auto;margin-right:auto;">${esc(r.tagline)}</p>
+          <span class="points-badge">vale ${r.points} pts por acerto</span>
+        </div>
+      </div>
+      ${renderControls({showPrev:pos>0,showReveal:false,showNext:true,nextLabel:'Começar rodada →'})}
+      ${renderMenuOverlay()}`;
+    return;
+  }
+
+  if(f.kind==='closing'){
+    const ranked=[...teams].sort((a,b)=>b.score-a.score);
+    const max=Math.max(1,...ranked.map(t=>t.score));
+    const podium=ranked.map(t=>`
+      <div class="podium-col">
+        <div class="podium-bar" style="height:${20+ (t.score/max)*140}px;background:${t.color}">${t.score}</div>
+        <div class="podium-name">${esc(t.name)}</div>
+      </div>`).join('');
+    const glossary=GLOSSARY.map(([term,def])=>`<div class="gterm"><b>${esc(term)}</b><span>${esc(def)}</span></div>`).join('');
+    app.innerHTML=`
+      ${renderHeader(100,'Caso encerrado')}
+      <div class="stage-outer">
+        <div class="stage-card stage-in">
+          <div class="roundintro-num" style="text-align:center;">Caso encerrado</div>
+          <h2 class="roundintro-title" style="text-align:center;">Investigação concluída! 🔎</h2>
+          <div class="podium">${podium}</div>
+          <p style="text-align:center;color:var(--ink-soft);margin-bottom:26px;">Parabéns a todas as equipes de detetives de dados!</p>
+          <h3 style="font-size:16px;color:var(--accent-2);margin:0 0 4px;">Glossário completo para revisão rápida</h3>
+          <p style="color:var(--ink-faint);font-size:13.5px;margin:0 0 10px;">Uma última passada por todos os termos antes de encerrar a aula.</p>
+          <div class="glossary-grid">${glossary}</div>
+        </div>
+      </div>
+      ${renderControls({showPrev:true,showReveal:false,showNext:false})}
+      ${renderMenuOverlay()}`;
+    return;
+  }
+
+  // question slide
+  const r=ROUNDS[f.ri], s=r.slides[f.si];
+  let visualHtml = s.visual?`<div class="visual-area">${s.visual}</div>`:'';
+  let tableHtml='';
+  if(s.table){
+    tableHtml=`<table class="data-table"><thead><tr>${s.table.head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead>
+    <tbody>${s.table.rows.map(row=>`<tr>${row.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  }
+  let choicesHtml='';
+  if(s.choices){
+    const letters=['A','B','C','D'];
+    choicesHtml=`<div class="choices">${s.choices.map((c,i)=>`
+      <div class="choice ${revealed&&c.c?'correct':''} ${revealed&&!c.c?'dim':''}">
+        <span class="letter">${letters[i]}</span><span>${esc(c.t)}</span>
+      </div>`).join('')}</div>`;
+  }
+  let revealHtml='';
+  if(revealed){
+    const whoBtns=teams.map((t,i)=>`<button class="wgi-btn" onclick="addPoint(${i},${r.points})"><span class="dot" style="background:${t.color}"></span>+${r.points} ${esc(t.name)}</button>`).join('');
+    revealHtml=`<div class="reveal-panel">
+      <div class="rp-label">Gabarito</div>
+      <div class="rp-body">${s.reveal}</div>
+      <div class="who-got-it"><span class="wlabel">Quem acertou?</span>${whoBtns}</div>
+    </div>`;
+  }
+
+  app.innerHTML=`
+    ${renderHeader(progressPct,`Rodada ${f.ri+1} · ${esc(r.title)} — cartão ${f.si+1} de ${r.slides.length}`)}
+    <div class="stage-outer">
+      <div class="stage-card stage-in">
+        <div class="badge-row">
+          <span class="round-badge">Rodada ${f.ri+1} · cartão ${f.si+1}/${r.slides.length}</span>
+          <span class="points-badge">${r.points} pts</span>
+        </div>
+        <p class="prompt">${s.prompt}</p>
+        ${tableHtml}
+        ${visualHtml}
+        ${choicesHtml}
+        ${revealHtml}
+      </div>
+    </div>
+    ${renderControls({showPrev:true,showReveal:true,showNext:true})}
+    ${renderMenuOverlay()}`;
+}
+
+/* ======================= ACTIONS ======================= */
+function goWelcome(){phase='welcome';render();}
+function goSetup(){phase='setup';render();}
+function addTeam(){
+  if(teams.length>=4)return;
+  const palette=['var(--team-1)','var(--team-2)','var(--team-3)','var(--team-4)'];
+  const names=['Equipe Âmbar','Equipe Ciano','Equipe Magenta','Equipe Violeta'];
+  teams.push({name:names[teams.length],color:palette[teams.length],score:0});
+  render();
+}
+function removeTeam(i){teams.splice(i,1);render();}
+function renameTeam(i,v){teams[i].name=v||teams[i].name;}
+function startGame(){
+  teams.forEach(t=>t.score=0);
+  buildFlow();
+  pos=0;revealed=false;phase='play';
+  timerReset();
+  render();
+}
+function nextSlide(){
+  if(pos<flow.length-1){pos++;revealed=false;timerReset();render();window.scrollTo(0,0);}
+}
+function prevSlide(){
+  if(pos>0){pos--;revealed=false;timerReset();render();window.scrollTo(0,0);}
+}
+function jumpTo(i){pos=i;revealed=false;menuOpen=false;timerReset();render();window.scrollTo(0,0);}
+function toggleReveal(){revealed=!revealed;render();}
+function toggleMenu(){menuOpen=!menuOpen;render();}
+function addPoint(i,pts){teams[i].score+=pts;render();}
+
+function timerToggle(){
+  timer.running=!timer.running;
+  if(timer.running){
+    timer.handle=setInterval(()=>{
+      if(timer.remaining>0){timer.remaining--;render();}
+      else{timer.running=false;clearInterval(timer.handle);render();}
+    },1000);
+  } else if(timer.handle){clearInterval(timer.handle);}
+  render();
+}
+function timerReset(){
+  timer.running=false;
+  if(timer.handle)clearInterval(timer.handle);
+  timer.remaining=timer.total;
+}
+function timerAdjust(d){
+  timer.total=Math.max(15,timer.total+d);
+  timer.remaining=Math.max(0,timer.remaining+d);
+  render();
+}
+
+document.addEventListener('keydown',(e)=>{
+  if(phase!=='play')return;
+  if(e.key==='ArrowRight'||e.key==='Enter')nextSlide();
+  else if(e.key==='ArrowLeft')prevSlide();
+  else if(e.key===' '){e.preventDefault();toggleReveal();}
+});
+
+render();
+</script>
+</body>
+</html>
