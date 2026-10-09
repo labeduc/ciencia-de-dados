@@ -1,2 +1,2 @@
 .venv
-clientes.db
+*.db
