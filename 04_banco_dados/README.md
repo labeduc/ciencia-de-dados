@@ -20,7 +20,7 @@ Curso introdutório de Banco de Dados voltado para jovens adolescentes do ensino
 
 | # | Notebook | Tema |
 |---|---|---|
-| 01 | `Aula01_Banco_Dados.ipynb` | Dados e IA no dia a dia, como o ChatGPT usa banco de dados (RAG), crescimento dos dados (Data Never Sleeps), tipos de BD, introdução a SQL, `SELECT`, `WHERE`, `ORDER BY`, `GROUP BY`, `HAVING`, exercícios com gabarito (`videogame_sales`) |
+| 01 | `Aula01_Banco_Dados.ipynb` | Dados e IA no dia a dia, oportunidades na área de dados, como o ChatGPT usa banco de dados (RAG), crescimento dos dados (Data Never Sleeps), tipos de BD, introdução a SQL, `SELECT`, `WHERE`, `ORDER BY`, `GROUP BY`, `HAVING`, exercícios com gabarito (`videogame_sales`) |
 | P1 | `Aula01_SQL_Island.ipynb` | Prática gamificada — consultas SQL em banco temático de aldeias e habitantes |
 | 02 | `Aula02_Banco_Dados.ipynb` | `INSERT`, `CREATE TABLE`, `DELETE`, `UPDATE`, Constraints, `JOIN` |
 | P2 | `Aula02_Exercicio2.ipynb` | Atividade final — modelagem e criação do banco BDEmpregados |
@@ -33,6 +33,7 @@ Curso introdutório de Banco de Dados voltado para jovens adolescentes do ensino
 |---|---|
 | Dados e IA | Como TikTok, Spotify, Netflix e outras plataformas coletam e usam seus dados; o ciclo dado + algoritmo de recomendação |
 | O Dilema das Redes | Clip do documentário *The Social Dilemma* (Netflix) como recurso de contextualização |
+| Oportunidades em Dados | Visão geral do mercado de trabalho, carreiras e oportunidades na área de dados e IA |
 | ChatGPT e Banco de Dados | Explicação simplificada de RAG (*Retrieval-Augmented Generation*) — como a IA consulta bancos de dados para gerar respostas |
 | Crescimento dos dados | Infográficos *Data Never Sleeps 12.0* (2024) e *AI Edition 2025* (Domo) |
 | Tipos de BD | SQL (Relacional) vs. NoSQL (Chave-Valor, Grafo, Documentos, Colunar); principais SGBDs |

@@ -26,6 +26,7 @@ Primeira aula do curso: contextualização sobre bancos de dados e introdução 
 **Tópicos:**
 - O que é um banco de dados (quiz de abertura)
 - Apresentação da disciplina: presença dos bancos de dados no dia a dia
+- Oportunidades e carreiras na área de dados
 - Crescimento do volume de dados no mundo (Data Never Sleeps, unidades de medida — de Kilobyte a Zettabyte)
 - Tipos de banco de dados: SQL (Relacional) vs. NoSQL (Chave-Valor, Grafo, Documentos, Colunar)
 - Principais SGBDs relacionais: Oracle, SQL Server, IBM DB2, PostgreSQL, SQLite, MySQL
